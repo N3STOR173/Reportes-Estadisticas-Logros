@@ -6,42 +6,64 @@
   <title>Reportes</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
+
     body {
       font-family: system-ui, sans-serif;
-      background: #f5f5f5;
+      background: #0f1115;
+      color: #e6e6e6;
       min-height: 100vh;
       padding: 3rem 1.5rem;
     }
-    h1 { font-size: 1.75rem; font-weight: 500; margin-bottom: 0.4rem; }
-    .sub { color: #888; font-size: 0.9rem; margin-bottom: 2.5rem; }
+
+    h1 {
+      font-size: 1.75rem;
+      font-weight: 500;
+      margin-bottom: 0.4rem;
+    }
+
+    .sub {
+      color: #9aa0a6;
+      font-size: 0.9rem;
+      margin-bottom: 2.5rem;
+    }
+
     .rama { margin-bottom: 2rem; }
+
     .rama-title {
       font-size: 0.75rem;
       font-weight: 500;
       text-transform: uppercase;
       letter-spacing: 0.08em;
-      color: #999;
+      color: #6b7280;
       margin-bottom: 0.75rem;
     }
+
     .cards {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 1rem;
       max-width: 600px;
     }
+
     .card {
-      background: white;
+      background: #181a20;
       border-radius: 12px;
-      border: 0.5px solid #e0e0e0;
+      border: 1px solid #2a2d35;
       padding: 1.25rem;
       text-decoration: none;
       color: inherit;
       display: flex;
       flex-direction: column;
       gap: 6px;
-      transition: border-color 0.15s, transform 0.15s;
+      transition: border-color 0.15s, transform 0.15s, background 0.15s;
     }
-    .card:hover { border-color: #aaa; transform: translateY(-2px); }
+
+    .card:hover {
+      border-color: #3f444f;
+      background: #1f222a;
+      transform: translateY(-2px);
+    }
+
     .badge {
       display: inline-block;
       font-size: 11px;
@@ -51,37 +73,33 @@
       width: fit-content;
       margin-bottom: 4px;
     }
-    .badge-back  { background: #eeedfe; color: #3C3489; }
-    .badge-front { background: #E1F5EE; color: #085041; }
-    .card h2 { font-size: 0.95rem; font-weight: 500; }
-    .card p  { font-size: 0.8rem; color: #888; }
-    .arrow   { font-size: 0.75rem; color: #bbb; margin-top: auto; padding-top: 8px; }
+
+    .badge-back  { background: #2a285c; color: #b8b5ff; }
+    .badge-front { background: #0d3f36; color: #7ee0c6; }
+
+    .card h2 {
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    .card p  {
+      font-size: 0.8rem;
+      color: #9aa0a6;
+    }
+
+    .arrow {
+      font-size: 0.75rem;
+      color: #6b7280;
+      margin-top: auto;
+      padding-top: 8px;
+    }
   </style>
 </head>
+
 <body>
   <h1>Reportes</h1>
   <p class="sub">Selecciona una rama y un reporte</p>
 
-  <!--
-  <div class="rama">
-    <p class="rama-title">main</p>
-    <div class="cards">
-      <a class="card" href="./main/back/index.html">
-        <span class="badge badge-back">Back</span>
-        <h2>Reporte backend</h2>
-        <p>Rama main</p>
-        <span class="arrow">Ver reporte →</span>
-      </a>
-      <a class="card" href="./main/front/index.html">
-        <span class="badge badge-front">Front</span>
-        <h2>Reporte frontend</h2>
-        <p>Rama main</p>
-        <span class="arrow">Ver reporte →</span>
-      </a>
-    </div>
-  </div>
-  -->
-  
   <div class="rama">
     <p class="rama-title">dev</p>
     <div class="cards">
@@ -91,6 +109,7 @@
         <p>Rama dev</p>
         <span class="arrow">Ver reporte →</span>
       </a>
+
       <a class="card" href="./front/dev">
         <span class="badge badge-front">Front</span>
         <h2>Reporte frontend</h2>
@@ -99,26 +118,6 @@
       </a>
     </div>
   </div>
-
-  <!--
-  <div class="rama">
-    <p class="rama-title">feature</p>
-    <div class="cards">
-      <a class="card" href="./feature/back/index.html">
-        <span class="badge badge-back">Back</span>
-        <h2>Reporte backend</h2>
-        <p>Rama feature</p>
-        <span class="arrow">Ver reporte →</span>
-      </a>
-      <a class="card" href="./feature/front/index.html">
-        <span class="badge badge-front">Front</span>
-        <h2>Reporte frontend</h2>
-        <p>Rama feature</p>
-        <span class="arrow">Ver reporte →</span>
-      </a>
-    </div>
-  </div>
-  -->
 
 </body>
 </html>

@@ -1,141 +1,158 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reportes</title>
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reportes</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-    body {
-      font-family: system-ui, sans-serif;
-      background: #0f1115;
-      color: #e6e6e6;
-      min-height: 100vh;
-      padding: 3rem 1.5rem;
-    }
+        body {
+            font-family: system-ui, sans-serif;
+            background: #0f1115;
+            color: #e6e6e6;
+            min-height: 100vh;
+            padding: 3rem 1.5rem;
+        }
 
-    h1 {
-      font-size: 1.75rem;
-      font-weight: 500;
-      margin-bottom: 0.4rem;
-    }
+        h1 {
+            font-size: 1.75rem;
+            font-weight: 500;
+            margin-bottom: 0.4rem;
+        }
 
-    .sub {
-      color: #9aa0a6;
-      font-size: 0.9rem;
-      margin-bottom: 2.5rem;
-    }
+        .sub {
+            color: #9aa0a6;
+            font-size: 0.9rem;
+            margin-bottom: 2.5rem;
+        }
 
-    .rama { margin-bottom: 2rem; }
+        .rama {
+            margin-bottom: 2rem;
+        }
 
-    .rama-title {
-      font-size: 0.75rem;
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: #6b7280;
-      margin-bottom: 0.75rem;
-    }
+        .rama-title {
+            font-size: 0.75rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #6b7280;
+            margin-bottom: 0.75rem;
+        }
 
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1rem;
-      max-width: 600px;
-    }
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            max-width: 600px;
+        }
 
-    .card {
-      background: #181a20;
-      border-radius: 12px;
-      border: 1px solid #2a2d35;
-      padding: 1.25rem;
-      text-decoration: none;
-      color: inherit;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      transition: border-color 0.15s, transform 0.15s, background 0.15s;
-    }
+        .card {
+            background: #181a20;
+            border-radius: 12px;
+            border: 1px solid #2a2d35;
+            padding: 1.25rem;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            transition: border-color 0.15s, transform 0.15s, background 0.15s;
+        }
 
-    .card:hover {
-      border-color: #3f444f;
-      background: #1f222a;
-      transform: translateY(-2px);
-    }
+        .card:hover {
+            border-color: #3f444f;
+            background: #1f222a;
+            transform: translateY(-2px);
+        }
 
-    .badge {
-      display: inline-block;
-      font-size: 11px;
-      font-weight: 500;
-      padding: 3px 10px;
-      border-radius: 20px;
-      width: fit-content;
-      margin-bottom: 4px;
-    }
+        .badge {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 500;
+            padding: 3px 10px;
+            border-radius: 20px;
+            width: fit-content;
+            margin-bottom: 4px;
+        }
 
-    .badge-back  { background: #2a285c; color: #b8b5ff; }
-    .badge-front { background: #0d3f36; color: #7ee0c6; }
+        .badge-back {
+            background: #2a285c;
+            color: #b8b5ff;
+        }
 
-    .card h2 {
-      font-size: 0.95rem;
-      font-weight: 500;
-    }
+        .badge-front {
+            background: #0d3f36;
+            color: #7ee0c6;
+        }
 
-    .card p  {
-      font-size: 0.8rem;
-      color: #9aa0a6;
-    }
+        .card h2 {
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
 
-    .arrow {
-      font-size: 0.75rem;
-      color: #6b7280;
-      margin-top: auto;
-      padding-top: 8px;
-    }
-  </style>
+        .card p {
+            font-size: 0.8rem;
+            color: #9aa0a6;
+        }
+
+        .arrow {
+            font-size: 0.75rem;
+            color: #6b7280;
+            margin-top: auto;
+            padding-top: 8px;
+        }
+    </style>
 </head>
 
 <body>
-  <h1>Reportes</h1>
-  <p class="sub">Selecciona una rama y un reporte</p>
 
-  <div class="rama">
-    <p class="rama-title">dev</p>
-    <div class="cards">
-      <a class="card" href="./back/dev">
-        <span class="badge badge-back">Back</span>
-        <h2>Reporte backend</h2>
-        <p>Rama dev</p>
-        <span class="arrow">Ver reporte →</span>
-      </a>
+    <h1>Reportes</h1>
+    <p class="sub">Selecciona una rama y un reporte</p>
 
-      <a class="card" href="./front/dev">
-        <span class="badge badge-front">Front</span>
-        <h2>Reporte frontend</h2>
-        <p>Rama dev</p>
-        <span class="arrow">Ver reporte →</span>
-      </a>
+    <div class="rama">
+        <p class="rama-title">dev</p>
+        <div class="cards">
+            <a class="card" href="./back/dev">
+                <span class="badge badge-back">Back</span>
+                <h2>Reporte backend</h2>
+                <p>Rama dev</p>
+                <span class="arrow">Ver reporte →</span>
+            </a>
+
+            <a class="card" href="./front/dev">
+                <span class="badge badge-front">Front</span>
+                <h2>Reporte frontend</h2>
+                <p>Rama dev</p>
+                <span class="arrow">Ver reporte →</span>
+            </a>
+        </div>
     </div>
 
-    <p class="rama-title">dev-panelUsuarioXLogros</p>
-    <div class="cards">
-      <a class="card" href="./back/dev-panelUsuarioXLogros">
-        <span class="badge badge-back">Back</span>
-        <h2>Reporte backend</h2>
-        <p>Rama dev-panelUsuarioXLogros</p>
-        <span class="arrow">Ver reporte →</span>
-      </a>
+    <div>
+        <p class="rama-title">dev-panelUsuarioXLogros</p>
+        <div class="cards">
+            <a class="card" href="./back/dev-panelUsuarioXLogros">
+                <span class="badge badge-back">Back</span>
+                <h2>Reporte backend</h2>
+                <p>Rama dev-panelUsuarioXLogros</p>
+                <span class="arrow">Ver reporte →</span>
+            </a>
 
-      <a class="card" href="./front/dev-panelUsuarioXLogros">
-        <span class="badge badge-front">Front</span>
-        <h2>Reporte frontend</h2>
-        <p>Rama dev-panelUsuarioXLogros</p>
-        <span class="arrow">Ver reporte →</span>
-      </a>
+            <a class="card" href="./front/dev-panelUsuarioXLogros">
+                <span class="badge badge-front">Front</span>
+                <h2>Reporte frontend</h2>
+                <p>Rama dev-panelUsuarioXLogros</p>
+                <span class="arrow">Ver reporte →</span>
+            </a>
+        </div>
     </div>
-    
-  </div>
 
 </body>
+
 </html>

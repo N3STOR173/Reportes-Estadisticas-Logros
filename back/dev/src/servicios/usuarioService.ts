@@ -1,9 +1,7 @@
-import UsuarioDAO from '../dao/usuarioDAO.js';
+import usuarioDAO from '../dao/usuarioDAO.js';
 import logros from "./logros/Logros.js";
 
-const usuarioDAO = new UsuarioDAO();
-
-export default class UsuarioService {
+class UsuarioService {
 
     getResultados(usuario: string) {
         return usuarioDAO.getResultados(usuario);
@@ -97,3 +95,5 @@ export default class UsuarioService {
         return usuarioDAO.getNumFranjasHorariasConEnvio(usuario);
     }
 }
+
+export default new UsuarioService();

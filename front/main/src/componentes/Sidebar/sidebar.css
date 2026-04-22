@@ -1,0 +1,199 @@
+/* navbar barra superior en pantallas pequeñas */
+.app-navbar-top {
+  background-color: #446E9B;
+  padding: 0.6rem 0.5rem !important;
+  display: flex;
+  justify-content: space-between !important;
+  align-items: center;
+}
+
+/* boton para desplegar navbar en pantallas pequeñas */
+.app-navbar-top button {
+  font-size: 1.6rem;
+  color: #F5F5F5;
+  border: none;
+}
+
+.app-navbar-top button:hover {
+  background-color: #72ACD3;
+  color: #F5F5F5;
+}
+
+.app-navbar-top button:focus,
+.app-navbar-top button:focus-visible {
+  background-color: #72ACD3;
+  color: #F5F5F5;
+  outline: none;
+  box-shadow: none;
+}
+
+/* titulo navbar */
+.app-navbar-titulo {
+  color: #F5F5F5;
+  font-size: 1.6rem !important;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.app-navbar-titulo:active,
+.app-navbar-titulo:focus,
+.app-navbar-titulo:hover {
+  color: #F5F5F5;
+  text-decoration: none;
+}
+
+/* sidebar (pantalla grande) */
+.sidebar {
+  background-color: #446E9B;
+  width: 300px;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  padding: 30px 22px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar .app-navbar-titulo {
+  margin-top: 30px;
+  margin-bottom: 65px;
+  font-size: 1.6rem;
+}
+
+.sidebar .app-navbar-titulo:hover {
+  color: #F5F5F5;
+}
+
+
+/* links */
+.sidebar-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.app-nav-link {
+  color: #F5F5F5;
+  font-size: 1.3rem;
+  padding: 10px 6px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
+
+/* iconos de links */
+.app-nav-link svg {
+  font-size: 1.5rem;
+}
+
+.app-nav-link:hover {
+  color: #F5F5F5;
+  background-color: #72acd3a2
+  /*background-color: #F5F5F5;
+  color: #446E9B !important;*/
+}
+
+.app-nav-link.active {
+  background-color: #72acd3a2;
+  color: #F5F5F5;
+  border-left: 8px solid #72ACD3;
+  padding-left: 8px;
+}
+
+.app-nav-link:focus,
+.app-nav-link:focus-visible { 
+  color: #F5F5F5;
+  outline: none;
+  box-shadow: inset 0 0 0 4px #72ACD3;
+  /*outline: 4px solid #72acd3a2;
+  outline-offset: 2px;*/
+}
+
+
+/* navbar cuando la pantalla es pequeñas */
+.app-offcanvas {
+  background-color: #446E9B;
+  border-right: none;
+  width: 85%;
+  max-width: 320px;
+}
+
+@media (max-width: 991px) {
+  .app-offcanvas {
+    --bs-offcanvas-width: 90vw;
+  }
+}
+
+.app-offcanvas .btn-close {
+  background-size: 20px;
+  filter: invert(1);
+  opacity: 1;
+  margin-top: 5px;
+}
+/*
+.app-offcanvas .btn-close:focus,
+.app-offcanvas .btn-close:focus-visible {
+  outline: 3px solid #72ACD3;
+  outline-offset: 2px;
+}
+*/
+.app-offcanvas .offcanvas-header {
+  align-items: flex-start;
+  padding-top: 10px;
+}
+
+.app-offcanvas-titulo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #F5F5F5;
+  margin-top: 40px;
+}
+
+.app-offcanvas-body {
+  padding: 1.8rem 1.65rem;
+}
+
+
+/* barra de carga */
+.barra-carga {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  padding: 10px 6px;
+  color: #F5F5F5;
+  font-size: 1.3rem;
+  background-color: #72acd3a2;
+}
+
+.barra-carga-fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background-color: #72acd3a2;
+  transition: width 0.5s ease;
+}
+
+.barra-carga-texto {
+  position: relative;
+  z-index: 1;
+}
+
+/* links en pantallas peuqeñas */
+@media (max-width: 991px) {
+
+  .app-nav-link {
+    font-size: 1.3rem;
+    padding: 16px 10px;
+    gap: 18px;
+  }
+
+  .app-navbar-titulo {
+    font-size: 1.8rem;
+  }
+}

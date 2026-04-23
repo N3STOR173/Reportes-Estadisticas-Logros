@@ -167,9 +167,7 @@
 <a name='L102'></a><a href='#L102'>102</a>
 <a name='L103'></a><a href='#L103'>103</a>
 <a name='L104'></a><a href='#L104'>104</a>
-<a name='L105'></a><a href='#L105'>105</a>
-<a name='L106'></a><a href='#L106'>106</a>
-<a name='L107'></a><a href='#L107'>107</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L105'></a><a href='#L105'>105</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -229,8 +227,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -278,7 +274,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import Table from "react-bootstrap/Table";
 import Pagination from "react-bootstrap/Pagination";
 import Spinner from "react-bootstrap/Spinner";
-import ToggleButton from 'react-bootstrap/ToggleButton';
+import Form from 'react-bootstrap/Form';
 import { useState, useEffect } from "react";
 import { useAppContext } from "../contexto/contextos";
 &nbsp;
@@ -309,7 +305,7 @@ export default function <span class="fstat-no" title="function not covered" >Tab
     const fetchRanking = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >async (p</span>ag: number) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        setLoading(true);</span>
 <span class="cstat-no" title="statement not covered" >        try {</span>
-            const res = <span class="cstat-no" title="statement not covered" >await fetch(`/api/usuarios/ranking?pag=${pag}&amp;tam=${pagSize}` + (porNivel? `&amp;usuario=${usuario}` : ""));</span>
+            const res = <span class="cstat-no" title="statement not covered" >await fetch(`/api/usuarios/ranking?pag=${pag}&amp;tam=${pagSize}` + (porNivel ? `&amp;usuario=${usuario}` : ""));</span>
             const data = <span class="cstat-no" title="statement not covered" >await res.json();</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >            setUsers(data.usuarios);</span>
@@ -327,17 +323,15 @@ export default function <span class="fstat-no" title="function not covered" >Tab
             &lt;/h1&gt;
 &nbsp;
             &lt;div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-4"&gt;
-                {usuario &amp;&amp; &lt;ToggleButton
+                {usuario &amp;&amp; &lt;Form.Check
                     className="mb-2"
+                    type="switch"
                     id="toggle-check"
-                    type="checkbox"
-                    variant="outline-primary"
+                    dir="rtl"
+                    label="Filtrar por nivel"
                     checked={porNivel}
-                    value="1"
-                    onChange={<span class="fstat-no" title="function not covered" >(e</span>) =&gt; {<span class="cstat-no" title="statement not covered" >setPorNivel(e.currentTarget.checked); <span class="cstat-no" title="statement not covered" >s</span>etPag(1)}</span>}
-                &gt;
-                    Filtrar por nivel
-                &lt;/ToggleButton&gt;}
+                    onChange={<span class="fstat-no" title="function not covered" >(e</span>) =&gt; { <span class="cstat-no" title="statement not covered" >setPorNivel(e.currentTarget.checked); <span class="cstat-no" title="statement not covered" >s</span>etPag(1) }</span>}
+                /&gt;}
                 {loading ? (
                     &lt;Spinner animation="border" /&gt;
                 ) : (
@@ -346,7 +340,7 @@ export default function <span class="fstat-no" title="function not covered" >Tab
                             &lt;tr&gt;
                                 &lt;th&gt;#&lt;/th&gt;
                                 &lt;th&gt;Usuario&lt;/th&gt;
-                                {!porNivel &amp;&amp; &lt;th&gt;Nivel&lt;/th&gt;}
+                                &lt;th&gt;Nivel&lt;/th&gt;
                                 &lt;th&gt;XP&lt;/th&gt;
                             &lt;/tr&gt;
                         &lt;/thead&gt;
@@ -355,7 +349,7 @@ export default function <span class="fstat-no" title="function not covered" >Tab
 <span class="cstat-no" title="statement not covered" >                                &lt;tr key={u.nombre}&gt;</span>
                                     &lt;td&gt;{(pag - 1) * pagSize + index + 1}&lt;/td&gt;
                                     &lt;td&gt;{u.nombre}&lt;/td&gt;
-                                    {!porNivel &amp;&amp; &lt;td&gt;{u.nivel}&lt;/td&gt;}
+                                    &lt;td&gt;{u.nivel}&lt;/td&gt;
                                     &lt;td&gt;{u.xp}&lt;/td&gt;
                                 &lt;/tr&gt;
                             ))}
@@ -366,13 +360,13 @@ export default function <span class="fstat-no" title="function not covered" >Tab
                 &lt;div className="aligne-items-center"&gt;
                     &lt;Pagination&gt;
                         &lt;Pagination.Prev onClick={<span class="fstat-no" title="function not covered" >() =&gt; <span class="cstat-no" title="statement not covered" >s</span>etPag(pag - 1)} d</span>isabled={pag === 1} /&gt;
-                        &lt;Pagination.Ellipsis disabled={pag === 1} /&gt;
-                        
+                        {pag !== 1 &amp;&amp; &lt;Pagination.Ellipsis /&gt;}
+&nbsp;
                         &lt;Pagination.Item key={pag} active={true} onClick={<span class="fstat-no" title="function not covered" >() =&gt; <span class="cstat-no" title="statement not covered" >s</span>etPag(pag)}&gt;</span>
                             {pag}
                         &lt;/Pagination.Item&gt;
 &nbsp;
-                        &lt;Pagination.Ellipsis disabled={pag === totalPags}/&gt;
+                        {pag !== totalPags &amp;&amp; &lt;Pagination.Ellipsis /&gt;}
                         &lt;Pagination.Next onClick={<span class="fstat-no" title="function not covered" >() =&gt; <span class="cstat-no" title="statement not covered" >s</span>etPag(pag + 1)} d</span>isabled={pag === totalPags} /&gt;
                     &lt;/Pagination&gt;
                 &lt;/div&gt;
@@ -388,7 +382,7 @@ export default function <span class="fstat-no" title="function not covered" >Tab
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-04-23T10:14:01.007Z
+                at 2026-04-23T16:21:12.641Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

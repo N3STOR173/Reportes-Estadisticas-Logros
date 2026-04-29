@@ -30,9 +30,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">66.66% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>5/10</span>
+                <span class='fraction'>8/12</span>
             </div>
         
             
@@ -116,7 +116,21 @@
 <a name='L51'></a><a href='#L51'>51</a>
 <a name='L52'></a><a href='#L52'>52</a>
 <a name='L53'></a><a href='#L53'>53</a>
-<a name='L54'></a><a href='#L54'>54</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -169,8 +183,17 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">type Props = {
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Alert } from "react-bootstrap";
+&nbsp;
+type Props = {
     hasResult: boolean;
+    mensajeDeNoEncontrado: string;
     tituloBusqueda: string;
     descripcion: string;
     tituloResultado?: React.ReactNode;
@@ -180,6 +203,7 @@
 &nbsp;
 export default function PlantillaBusqueda({
     hasResult,
+    mensajeDeNoEncontrado,
     tituloBusqueda,
     descripcion,
     tituloResultado,
@@ -191,10 +215,10 @@ export default function PlantillaBusqueda({
 &nbsp;
             &lt;div className={
                 `transition-all duration-700 ease-in-out flex flex-col items-center
-                ${hasResult ? "justify-start pt-4" : <span class="branch-1 cbranch-no" title="branch not covered" >"justify-center min-h-[80vh]"}</span>
+                ${hasResult ? <span class="branch-0 cbranch-no" title="branch not covered" >"justify-start pt-4" : "</span>justify-center min-h-[80vh]"}
             `}&gt;
 &nbsp;
-                {!hasResult &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >&lt;div className={`text-center transition-all duration-700 ${hasResult ? "mb-6" : "mb-4"}`}&gt;</span>
+                {!hasResult &amp;&amp; &lt;div className={`text-center transition-all duration-700 ${hasResult ? <span class="branch-0 cbranch-no" title="branch not covered" >"mb-6" : "</span>mb-4"}`}&gt;
                     &lt;h1 className="text-3xl font-bold"&gt;
                         {tituloBusqueda}
                     &lt;/h1&gt;
@@ -209,15 +233,21 @@ export default function PlantillaBusqueda({
                     {buscador}
                 &lt;/div&gt;
 &nbsp;
-                {hasResult &amp;&amp; &lt;h1 className="mt-4 w-full text-left"&gt;{tituloResultado}&lt;/h1&gt;}
+                {mensajeDeNoEncontrado &amp;&amp; (
+                    &lt;Alert variant="danger" className="mt-2"&gt;
+                        {mensajeDeNoEncontrado}
+                    &lt;/Alert&gt;
+                )}
+&nbsp;
+                {hasResult &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >&lt;h1 className="mt-4 w-full text-left"&gt;{tituloResultado}&lt;/h1&gt;}</span>
 &nbsp;
                 &lt;div className={`
                     w-full mt-8 transition-all duration-700 ease-in-out
-                    ${hasResult ? "opacity-100 translate-y-0" : <span class="branch-1 cbranch-no" title="branch not covered" >"opacity-0 translate-y-8 pointer-events-none h-0 overflow-hidden"}</span>
+                    ${hasResult ? <span class="branch-0 cbranch-no" title="branch not covered" >"opacity-100 translate-y-0" : "</span>opacity-0 translate-y-8 pointer-events-none h-0 overflow-hidden"}
                 `}&gt;
                     {children}
                 &lt;/div&gt;
-                
+&nbsp;
 &nbsp;
             &lt;/div&gt;
         &lt;/div&gt;
@@ -229,7 +259,7 @@ export default function PlantillaBusqueda({
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-04-29T17:19:27.931Z
+                at 2026-04-29T17:43:00.489Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

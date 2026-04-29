@@ -25,28 +25,28 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/14</span>
+                <span class='fraction'>0/20</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/7</span>
+                <span class='fraction'>0/14</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/5</span>
+                <span class='fraction'>0/8</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/14</span>
+                <span class='fraction'>0/19</span>
             </div>
         
             
@@ -109,8 +109,17 @@
 <a name='L44'></a><a href='#L44'>44</a>
 <a name='L45'></a><a href='#L45'>45</a>
 <a name='L46'></a><a href='#L46'>46</a>
-<a name='L47'></a><a href='#L47'>47</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -120,7 +129,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -129,6 +137,17 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -142,6 +161,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -159,17 +179,26 @@
 import { useEffect, useState } from "react";
 import Badge from 'react-bootstrap/Badge';
 &nbsp;
-import { useAppContext } from "../contexto/contextos";
 import PlantillaBusqueda from "../componentes/plantillaBusqueda";
 import Buscador from "../componentes/Buscador/buscador";
 import LogrosUsuarioComp from "../componentes/LogrosUsuarioComp/logrosUsuarioComp";
 &nbsp;
 export default function <span class="fstat-no" title="function not covered" >LogrosUsuario() {</span>
-    const appContext = <span class="cstat-no" title="statement not covered" >useAppContext();</span>
     const params = <span class="cstat-no" title="statement not covered" >useParams();</span>
 &nbsp;
-    const usuario = <span class="cstat-no" title="statement not covered" >params.usuario || appContext?.usuarioActual;</span>
+    const usuario = <span class="cstat-no" title="statement not covered" >params.usuario || localStorage.getItem("usuarioActual") || "";</span>
     const [searchParams, setSearchParams] = <span class="cstat-no" title="statement not covered" >useSearchParams();</span>
+&nbsp;
+    const [usuarioExiste, setUsuarioExiste] = <span class="cstat-no" title="statement not covered" >useState&lt;boolean | null&gt;(null);</span>
+<span class="cstat-no" title="statement not covered" >    useEffect(<span class="fstat-no" title="function not covered" >() =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >        if (!usuario) <span class="cstat-no" title="statement not covered" >return;</span></span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        fetch(`/api/usuarios/${usuario}`)</span>
+            .then(<span class="fstat-no" title="function not covered" >res =&gt; <span class="cstat-no" title="statement not covered" >r</span>es.json())</span>
+            .then(<span class="fstat-no" title="function not covered" >data =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                setUsuarioExiste(data.existe);</span>
+            });
+    }, [usuario]);
 &nbsp;
     const navigate = <span class="cstat-no" title="statement not covered" >useNavigate();</span>
 <span class="cstat-no" title="statement not covered" >    useEffect(<span class="fstat-no" title="function not covered" >() =&gt; {</span></span>
@@ -189,7 +218,8 @@ export default function <span class="fstat-no" title="function not covered" >Log
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    return (</span>
         &lt;PlantillaBusqueda
-            hasResult={!!usuario}
+            hasResult={usuarioExiste === true}
+            mensajeDeNoEncontrado={!usuarioExiste &amp;&amp; usuario !== "" ? `El usuario "${usuario}" no existe` : ""}
             tituloBusqueda="Logros de usuarios"
             descripcion="Aquí podrás buscar cualquier usuario de ¡Acepta el reto! y observar sus logros alcanzados"
             tituloResultado={
@@ -208,7 +238,7 @@ export default function <span class="fstat-no" title="function not covered" >Log
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-04-27T11:46:01.067Z
+                at 2026-04-29T15:21:29.649Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

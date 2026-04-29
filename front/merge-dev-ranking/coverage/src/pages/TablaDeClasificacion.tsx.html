@@ -25,14 +25,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/99</span>
+                <span class='fraction'>0/96</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/46</span>
+                <span class='fraction'>0/44</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/94</span>
+                <span class='fraction'>0/91</span>
             </div>
         
             
@@ -324,7 +324,11 @@
 <a name='L259'></a><a href='#L259'>259</a>
 <a name='L260'></a><a href='#L260'>260</a>
 <a name='L261'></a><a href='#L261'>261</a>
-<a name='L262'></a><a href='#L262'>262</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L262'></a><a href='#L262'>262</a>
+<a name='L263'></a><a href='#L263'>263</a>
+<a name='L264'></a><a href='#L264'>264</a>
+<a name='L265'></a><a href='#L265'>265</a>
+<a name='L266'></a><a href='#L266'>266</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -501,9 +505,13 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -738,14 +746,14 @@ export default function <span class="fstat-no" title="function not covered" >Tab
 &nbsp;
     // maneja la actualizacion de la informacion de la tabla cuando se realizan nuevos envios
 <span class="cstat-no" title="statement not covered" >    useEffect(<span class="fstat-no" title="function not covered" >() =&gt; {</span></span>
-<span class="cstat-no" title="statement not covered" >        socket.on(EventType.ACTUALIZACION_RANKING, <span class="fstat-no" title="function not covered" >(d</span>ata) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >            handleRankingUpdate(data); // se actualiza la informacion de los usuarios</span>
+<span class="cstat-no" title="statement not covered" >        socket.on(EventType.ACTUALIZACION_RANKING, <span class="fstat-no" title="function not covered" >() =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >            handleRankingUpdate(); // se actualiza la informacion de los usuarios</span>
             // se actualiza la informacion del usuario
 <span class="cstat-no" title="statement not covered" >            if (usuario &amp;&amp; usuarioExiste) {</span>
 <span class="cstat-no" title="statement not covered" >                fetch(`/api/usuarios/ranking/${usuario}?filtrarNivel=${porNivel}`)</span>
                     .then(<span class="fstat-no" title="function not covered" >res =&gt; <span class="cstat-no" title="statement not covered" >r</span>es.json())</span>
                     .then(<span class="fstat-no" title="function not covered" >data =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >                        if (data.pos !== -1) </span>
+<span class="cstat-no" title="statement not covered" >                        if (data.pos !== -1)</span>
 <span class="cstat-no" title="statement not covered" >                            setInfoUsuario(data);</span>
                     });
             }
@@ -760,13 +768,17 @@ export default function <span class="fstat-no" title="function not covered" >Tab
 &nbsp;
     // se actualiza la informacion de latabla solo si alguno de los usuarios que se muestran actualmente ha sido afectado
     //  por los nuevos envios
-    const handleRankingUpdate = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >async (d</span>ata: InfoActualizacionesRanking) =&gt; {</span>
-        const <span class="cstat-no" title="statement not covered" >pagIni = (pag - 1) * rows + 1;</span>
-        const pagFin = <span class="cstat-no" title="statement not covered" >pag * rows;</span>
-<span class="cstat-no" title="statement not covered" >        if (data.minPos &lt;= pagFin)</span>
-<span class="cstat-no" title="statement not covered" >            fetchRanking(pag);</span>
+    const handleRankingUpdate = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >async () =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >        fetchRanking(pag);</span>
     }
-&nbsp;
+    /*
+    const handleRankingUpdate = async (data: InfoActualizacionesRanking) =&gt; {
+        const pagIni = (pag - 1) * rows + 1;
+        const pagFin = pag * rows;
+        if (data.minPos &lt;= pagFin)
+            fetchRanking(pag);
+    }
+    */
 <span class="cstat-no" title="statement not covered" >    return (</span>
         &lt;div&gt;
             &lt;h1 className="p-4 text-3xl font-bold"&gt;
@@ -853,7 +865,7 @@ export default function <span class="fstat-no" title="function not covered" >Tab
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-04-29T17:43:00.489Z
+                at 2026-04-29T18:25:36.181Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

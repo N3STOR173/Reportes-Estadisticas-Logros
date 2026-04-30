@@ -30,9 +30,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">91.66% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>11/12</span>
+                <span class='fraction'>12/12</span>
             </div>
         
             
@@ -126,7 +126,15 @@
 <a name='L61'></a><a href='#L61'>61</a>
 <a name='L62'></a><a href='#L62'>62</a>
 <a name='L63'></a><a href='#L63'>63</a>
-<a name='L64'></a><a href='#L64'>64</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -148,6 +156,14 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -211,55 +227,63 @@ export default function PlantillaBusqueda({
     children
 }: Props) {
     return (
-        &lt;div className="w-full px-4 sm:px-6 lg:px-8 mt-4"&gt;
+        &lt;div className="w-full px-4 sm:px-6 lg:px-8"&gt;
+            &lt;div className="flex flex-col" style={{ minHeight: "calc(100dvh - 75px)" }}&gt;
 &nbsp;
-            &lt;div className={
-                `transition-all duration-700 ease-in-out flex flex-col items-center
-                ${hasResult ? "justify-start pt-4" : "justify-center min-h-[80vh]"}
-            `}&gt;
+                {/* titulo y buscador */}
+                &lt;div className={`
+                    flex flex-col items-center flex-shrink-0 w-full transition-all duration-1000 ease-in-out
+                    ${hasResult ? "" : "mt-[calc(50dvh-155px)]"}
+                `}&gt;
+                    &lt;div className={`
+                        transition-all duration-1000 ease-in-out text-center overflow-hidden
+                        ${hasResult
+                            ? "opacity-0 max-h-0 mb-0 pointer-events-none"
+                            : "opacity-100 max-h-40 mb-4"
+                        }
+                    `}&gt;
+                        &lt;h1 className="text-3xl font-bold"&gt;{tituloBusqueda}&lt;/h1&gt;
+                        &lt;p className="mt-3 text-muted"&gt;{descripcion}&lt;/p&gt;
+                    &lt;/div&gt;
 &nbsp;
-                {!hasResult &amp;&amp; &lt;div className={`text-center transition-all duration-700 ${hasResult ? <span class="branch-0 cbranch-no" title="branch not covered" >"mb-6" : "</span>mb-4"}`}&gt;
-                    &lt;h1 className="text-3xl font-bold"&gt;
-                        {tituloBusqueda}
-                    &lt;/h1&gt;
+                    &lt;div className={`w-full max-w-md ${hasResult ? "mt-6" : ""}`}&gt;
+                        {buscador}
+                    &lt;/div&gt;
 &nbsp;
-                    &lt;p className="mt-3 text-muted"&gt;
-                        {descripcion}
-                    &lt;/p&gt;
+                    {mensajeDeNoEncontrado &amp;&amp; (
+                        &lt;Alert variant="danger" className="mt-2"&gt;
+                            {mensajeDeNoEncontrado}
+                        &lt;/Alert&gt;
+                    )}
 &nbsp;
-                &lt;/div&gt;}
-&nbsp;
-                &lt;div className={`w-full max-w-md transition-all duration-700`}&gt;
-                    {buscador}
+                    {hasResult &amp;&amp; (
+                        &lt;h1 className="mt-4 w-full text-left"&gt;{tituloResultado}&lt;/h1&gt;
+                    )}
                 &lt;/div&gt;
 &nbsp;
-                {mensajeDeNoEncontrado &amp;&amp; (
-                    &lt;Alert variant="danger" className="mt-2"&gt;
-                        {mensajeDeNoEncontrado}
-                    &lt;/Alert&gt;
-                )}
-&nbsp;
-                {hasResult &amp;&amp; &lt;h1 className="mt-4 w-full text-left"&gt;{tituloResultado}&lt;/h1&gt;}
-&nbsp;
+                {/* componente de informacion despues de la busqueda */}
                 &lt;div className={`
-                    w-full mt-8 transition-all duration-700 ease-in-out
-                    ${hasResult ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8 pointer-events-none h-0 overflow-hidden"}
+                    transition-all duration-1000 ease-in-out
+                    ${hasResult
+                        ? "opacity-100 translate-y-0 mt-2"
+                        : "opacity-0 translate-y-12 pointer-events-none h-0 overflow-hidden"
+                    }
                 `}&gt;
                     {children}
                 &lt;/div&gt;
 &nbsp;
-&nbsp;
             &lt;/div&gt;
         &lt;/div&gt;
     );
-}</pre></td></tr></table></pre>
+}
+&nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-04-29T18:37:42.554Z
+                at 2026-04-30T19:02:21.061Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

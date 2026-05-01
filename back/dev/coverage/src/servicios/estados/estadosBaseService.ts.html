@@ -3,15 +3,15 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for src/servicios/estadosService.ts</title>
+    <title>Code coverage report for src/servicios/estados/estadosBaseService.ts</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="../../prettify.css" />
-    <link rel="stylesheet" href="../../base.css" />
-    <link rel="shortcut icon" type="image/x-icon" href="../../favicon.png" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../../favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style type='text/css'>
         .coverage-summary .sorter {
-            background-image: url(../../sort-arrow-sprite.png);
+            background-image: url(../../../sort-arrow-sprite.png);
         }
     </style>
 </head>
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">src/servicios</a> estadosService.ts</h1>
+        <h1><a href="../../../index.html">All files</a> / <a href="index.html">src/servicios/estados</a> estadosBaseService.ts</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/109</span>
+                <span class='fraction'>0/191</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/32</span>
+                <span class='fraction'>0/64</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/21</span>
+                <span class='fraction'>0/35</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/99</span>
+                <span class='fraction'>0/173</span>
             </div>
         
             
@@ -380,7 +380,211 @@
 <a name='L315'></a><a href='#L315'>315</a>
 <a name='L316'></a><a href='#L316'>316</a>
 <a name='L317'></a><a href='#L317'>317</a>
-<a name='L318'></a><a href='#L318'>318</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L318'></a><a href='#L318'>318</a>
+<a name='L319'></a><a href='#L319'>319</a>
+<a name='L320'></a><a href='#L320'>320</a>
+<a name='L321'></a><a href='#L321'>321</a>
+<a name='L322'></a><a href='#L322'>322</a>
+<a name='L323'></a><a href='#L323'>323</a>
+<a name='L324'></a><a href='#L324'>324</a>
+<a name='L325'></a><a href='#L325'>325</a>
+<a name='L326'></a><a href='#L326'>326</a>
+<a name='L327'></a><a href='#L327'>327</a>
+<a name='L328'></a><a href='#L328'>328</a>
+<a name='L329'></a><a href='#L329'>329</a>
+<a name='L330'></a><a href='#L330'>330</a>
+<a name='L331'></a><a href='#L331'>331</a>
+<a name='L332'></a><a href='#L332'>332</a>
+<a name='L333'></a><a href='#L333'>333</a>
+<a name='L334'></a><a href='#L334'>334</a>
+<a name='L335'></a><a href='#L335'>335</a>
+<a name='L336'></a><a href='#L336'>336</a>
+<a name='L337'></a><a href='#L337'>337</a>
+<a name='L338'></a><a href='#L338'>338</a>
+<a name='L339'></a><a href='#L339'>339</a>
+<a name='L340'></a><a href='#L340'>340</a>
+<a name='L341'></a><a href='#L341'>341</a>
+<a name='L342'></a><a href='#L342'>342</a>
+<a name='L343'></a><a href='#L343'>343</a>
+<a name='L344'></a><a href='#L344'>344</a>
+<a name='L345'></a><a href='#L345'>345</a>
+<a name='L346'></a><a href='#L346'>346</a>
+<a name='L347'></a><a href='#L347'>347</a>
+<a name='L348'></a><a href='#L348'>348</a>
+<a name='L349'></a><a href='#L349'>349</a>
+<a name='L350'></a><a href='#L350'>350</a>
+<a name='L351'></a><a href='#L351'>351</a>
+<a name='L352'></a><a href='#L352'>352</a>
+<a name='L353'></a><a href='#L353'>353</a>
+<a name='L354'></a><a href='#L354'>354</a>
+<a name='L355'></a><a href='#L355'>355</a>
+<a name='L356'></a><a href='#L356'>356</a>
+<a name='L357'></a><a href='#L357'>357</a>
+<a name='L358'></a><a href='#L358'>358</a>
+<a name='L359'></a><a href='#L359'>359</a>
+<a name='L360'></a><a href='#L360'>360</a>
+<a name='L361'></a><a href='#L361'>361</a>
+<a name='L362'></a><a href='#L362'>362</a>
+<a name='L363'></a><a href='#L363'>363</a>
+<a name='L364'></a><a href='#L364'>364</a>
+<a name='L365'></a><a href='#L365'>365</a>
+<a name='L366'></a><a href='#L366'>366</a>
+<a name='L367'></a><a href='#L367'>367</a>
+<a name='L368'></a><a href='#L368'>368</a>
+<a name='L369'></a><a href='#L369'>369</a>
+<a name='L370'></a><a href='#L370'>370</a>
+<a name='L371'></a><a href='#L371'>371</a>
+<a name='L372'></a><a href='#L372'>372</a>
+<a name='L373'></a><a href='#L373'>373</a>
+<a name='L374'></a><a href='#L374'>374</a>
+<a name='L375'></a><a href='#L375'>375</a>
+<a name='L376'></a><a href='#L376'>376</a>
+<a name='L377'></a><a href='#L377'>377</a>
+<a name='L378'></a><a href='#L378'>378</a>
+<a name='L379'></a><a href='#L379'>379</a>
+<a name='L380'></a><a href='#L380'>380</a>
+<a name='L381'></a><a href='#L381'>381</a>
+<a name='L382'></a><a href='#L382'>382</a>
+<a name='L383'></a><a href='#L383'>383</a>
+<a name='L384'></a><a href='#L384'>384</a>
+<a name='L385'></a><a href='#L385'>385</a>
+<a name='L386'></a><a href='#L386'>386</a>
+<a name='L387'></a><a href='#L387'>387</a>
+<a name='L388'></a><a href='#L388'>388</a>
+<a name='L389'></a><a href='#L389'>389</a>
+<a name='L390'></a><a href='#L390'>390</a>
+<a name='L391'></a><a href='#L391'>391</a>
+<a name='L392'></a><a href='#L392'>392</a>
+<a name='L393'></a><a href='#L393'>393</a>
+<a name='L394'></a><a href='#L394'>394</a>
+<a name='L395'></a><a href='#L395'>395</a>
+<a name='L396'></a><a href='#L396'>396</a>
+<a name='L397'></a><a href='#L397'>397</a>
+<a name='L398'></a><a href='#L398'>398</a>
+<a name='L399'></a><a href='#L399'>399</a>
+<a name='L400'></a><a href='#L400'>400</a>
+<a name='L401'></a><a href='#L401'>401</a>
+<a name='L402'></a><a href='#L402'>402</a>
+<a name='L403'></a><a href='#L403'>403</a>
+<a name='L404'></a><a href='#L404'>404</a>
+<a name='L405'></a><a href='#L405'>405</a>
+<a name='L406'></a><a href='#L406'>406</a>
+<a name='L407'></a><a href='#L407'>407</a>
+<a name='L408'></a><a href='#L408'>408</a>
+<a name='L409'></a><a href='#L409'>409</a>
+<a name='L410'></a><a href='#L410'>410</a>
+<a name='L411'></a><a href='#L411'>411</a>
+<a name='L412'></a><a href='#L412'>412</a>
+<a name='L413'></a><a href='#L413'>413</a>
+<a name='L414'></a><a href='#L414'>414</a>
+<a name='L415'></a><a href='#L415'>415</a>
+<a name='L416'></a><a href='#L416'>416</a>
+<a name='L417'></a><a href='#L417'>417</a>
+<a name='L418'></a><a href='#L418'>418</a>
+<a name='L419'></a><a href='#L419'>419</a>
+<a name='L420'></a><a href='#L420'>420</a>
+<a name='L421'></a><a href='#L421'>421</a>
+<a name='L422'></a><a href='#L422'>422</a>
+<a name='L423'></a><a href='#L423'>423</a>
+<a name='L424'></a><a href='#L424'>424</a>
+<a name='L425'></a><a href='#L425'>425</a>
+<a name='L426'></a><a href='#L426'>426</a>
+<a name='L427'></a><a href='#L427'>427</a>
+<a name='L428'></a><a href='#L428'>428</a>
+<a name='L429'></a><a href='#L429'>429</a>
+<a name='L430'></a><a href='#L430'>430</a>
+<a name='L431'></a><a href='#L431'>431</a>
+<a name='L432'></a><a href='#L432'>432</a>
+<a name='L433'></a><a href='#L433'>433</a>
+<a name='L434'></a><a href='#L434'>434</a>
+<a name='L435'></a><a href='#L435'>435</a>
+<a name='L436'></a><a href='#L436'>436</a>
+<a name='L437'></a><a href='#L437'>437</a>
+<a name='L438'></a><a href='#L438'>438</a>
+<a name='L439'></a><a href='#L439'>439</a>
+<a name='L440'></a><a href='#L440'>440</a>
+<a name='L441'></a><a href='#L441'>441</a>
+<a name='L442'></a><a href='#L442'>442</a>
+<a name='L443'></a><a href='#L443'>443</a>
+<a name='L444'></a><a href='#L444'>444</a>
+<a name='L445'></a><a href='#L445'>445</a>
+<a name='L446'></a><a href='#L446'>446</a>
+<a name='L447'></a><a href='#L447'>447</a>
+<a name='L448'></a><a href='#L448'>448</a>
+<a name='L449'></a><a href='#L449'>449</a>
+<a name='L450'></a><a href='#L450'>450</a>
+<a name='L451'></a><a href='#L451'>451</a>
+<a name='L452'></a><a href='#L452'>452</a>
+<a name='L453'></a><a href='#L453'>453</a>
+<a name='L454'></a><a href='#L454'>454</a>
+<a name='L455'></a><a href='#L455'>455</a>
+<a name='L456'></a><a href='#L456'>456</a>
+<a name='L457'></a><a href='#L457'>457</a>
+<a name='L458'></a><a href='#L458'>458</a>
+<a name='L459'></a><a href='#L459'>459</a>
+<a name='L460'></a><a href='#L460'>460</a>
+<a name='L461'></a><a href='#L461'>461</a>
+<a name='L462'></a><a href='#L462'>462</a>
+<a name='L463'></a><a href='#L463'>463</a>
+<a name='L464'></a><a href='#L464'>464</a>
+<a name='L465'></a><a href='#L465'>465</a>
+<a name='L466'></a><a href='#L466'>466</a>
+<a name='L467'></a><a href='#L467'>467</a>
+<a name='L468'></a><a href='#L468'>468</a>
+<a name='L469'></a><a href='#L469'>469</a>
+<a name='L470'></a><a href='#L470'>470</a>
+<a name='L471'></a><a href='#L471'>471</a>
+<a name='L472'></a><a href='#L472'>472</a>
+<a name='L473'></a><a href='#L473'>473</a>
+<a name='L474'></a><a href='#L474'>474</a>
+<a name='L475'></a><a href='#L475'>475</a>
+<a name='L476'></a><a href='#L476'>476</a>
+<a name='L477'></a><a href='#L477'>477</a>
+<a name='L478'></a><a href='#L478'>478</a>
+<a name='L479'></a><a href='#L479'>479</a>
+<a name='L480'></a><a href='#L480'>480</a>
+<a name='L481'></a><a href='#L481'>481</a>
+<a name='L482'></a><a href='#L482'>482</a>
+<a name='L483'></a><a href='#L483'>483</a>
+<a name='L484'></a><a href='#L484'>484</a>
+<a name='L485'></a><a href='#L485'>485</a>
+<a name='L486'></a><a href='#L486'>486</a>
+<a name='L487'></a><a href='#L487'>487</a>
+<a name='L488'></a><a href='#L488'>488</a>
+<a name='L489'></a><a href='#L489'>489</a>
+<a name='L490'></a><a href='#L490'>490</a>
+<a name='L491'></a><a href='#L491'>491</a>
+<a name='L492'></a><a href='#L492'>492</a>
+<a name='L493'></a><a href='#L493'>493</a>
+<a name='L494'></a><a href='#L494'>494</a>
+<a name='L495'></a><a href='#L495'>495</a>
+<a name='L496'></a><a href='#L496'>496</a>
+<a name='L497'></a><a href='#L497'>497</a>
+<a name='L498'></a><a href='#L498'>498</a>
+<a name='L499'></a><a href='#L499'>499</a>
+<a name='L500'></a><a href='#L500'>500</a>
+<a name='L501'></a><a href='#L501'>501</a>
+<a name='L502'></a><a href='#L502'>502</a>
+<a name='L503'></a><a href='#L503'>503</a>
+<a name='L504'></a><a href='#L504'>504</a>
+<a name='L505'></a><a href='#L505'>505</a>
+<a name='L506'></a><a href='#L506'>506</a>
+<a name='L507'></a><a href='#L507'>507</a>
+<a name='L508'></a><a href='#L508'>508</a>
+<a name='L509'></a><a href='#L509'>509</a>
+<a name='L510'></a><a href='#L510'>510</a>
+<a name='L511'></a><a href='#L511'>511</a>
+<a name='L512'></a><a href='#L512'>512</a>
+<a name='L513'></a><a href='#L513'>513</a>
+<a name='L514'></a><a href='#L514'>514</a>
+<a name='L515'></a><a href='#L515'>515</a>
+<a name='L516'></a><a href='#L516'>516</a>
+<a name='L517'></a><a href='#L517'>517</a>
+<a name='L518'></a><a href='#L518'>518</a>
+<a name='L519'></a><a href='#L519'>519</a>
+<a name='L520'></a><a href='#L520'>520</a>
+<a name='L521'></a><a href='#L521'>521</a>
+<a name='L522'></a><a href='#L522'>522</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -395,10 +599,187 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -484,6 +865,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -513,23 +895,37 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -537,14 +933,22 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -552,7 +956,11 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -697,25 +1105,202 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { EnvioProcesado } from "../types/envioProcesado.js";
-import { EstadoProblema } from "../types/estadoProblema.js";
-import { EstadoUsuario } from "../types/estadoUsuario.js";
-import usuarioService from "./usuarioService.js";
-import problemaService from "./problemaService.js";
-import logrosService from "./logros/logrosService.js";
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { EnvioProcesado } from "../../types/envioProcesado.js";
+import { EstadoProblema } from "../../types/estadoProblema.js";
+import { EstadoUsuario } from "../../types/estadoUsuario.js";
+import usuarioService from "../usuarios/estadisticasUsuarioBaseService.js";
+import problemaService from "../problemas/estadisticasProblemaBaseService.js";
+import logrosService from "../logros/logrosService.js";
 &nbsp;
-class EstadosService {
+class EstadosBaseService {
 &nbsp;
     private estadosUsuarios: Map&lt;string, EstadoUsuario&gt; = <span class="cstat-no" title="statement not covered" >new Map();</span>
     private estadosProblemas: Map&lt;string, EstadoProblema&gt; = <span class="cstat-no" title="statement not covered" >new Map();</span>
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public async g</span>etEstadosIniciales(estadosUsuarios: Map&lt;string, EstadoUsuario&gt;, estadosProblemas: Map&lt;string, EstadoProblema&gt;) {
+&nbsp;
+        //se carga la informacion sobre usuarios que trata este estado en los estados de los usuarios
+<span class="cstat-no" title="statement not covered" >        for (const [usuario, estado] of estadosUsuarios) {</span>
+<span class="cstat-no" title="statement not covered" >            await this.cargarDatosEstadoUsuario(estado, usuario);</span>
+        }
+&nbsp;
+        //se carga la informacion sobre problemas que trata este estado en los estados de los problemas
+<span class="cstat-no" title="statement not covered" >        for (const [problema, estado] of estadosProblemas) {</span>
+<span class="cstat-no" title="statement not covered" >            await this.cargarDatosEstadoProblema(estado, problema);</span>
+        }
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    private async c</span>argarDatosEstadoUsuario(estado: EstadoUsuario, usuario: string) {
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        estado.numEnvios = await usuarioService.getNumEnvios(usuario);</span>
+<span class="cstat-no" title="statement not covered" >        estado.problemasAC = new Set(await usuarioService.getProblemasResueltos(usuario));</span>
+&nbsp;
+        const resultados = <span class="cstat-no" title="statement not covered" >await usuarioService.getResultados(usuario);</span>
+<span class="cstat-no" title="statement not covered" >        estado.resultados = new Map(resultados.<span class="fstat-no" title="function not covered" >map(r</span> =&gt; <span class="cstat-no" title="statement not covered" >[r.name, r.value])</span>);</span>
+&nbsp;
+        const lenguajes = <span class="cstat-no" title="statement not covered" >await usuarioService.getLenguajes(usuario);</span>
+<span class="cstat-no" title="statement not covered" >        estado.lenguajes = new Set(lenguajes.<span class="fstat-no" title="function not covered" >map(l</span> =&gt; <span class="cstat-no" title="statement not covered" >l.name))</span>;</span>
+<span class="cstat-no" title="statement not covered" >        estado.lenguajesConteo = new Map(lenguajes.<span class="fstat-no" title="function not covered" >map(l</span> =&gt; <span class="cstat-no" title="statement not covered" >[l.name, l.value])</span>);</span>
+&nbsp;
+        const lenguajesAC = <span class="cstat-no" title="statement not covered" >await usuarioService.getLenguajesAC(usuario);</span>
+<span class="cstat-no" title="statement not covered" >        estado.lenguajesAC = new Map(lenguajesAC.<span class="fstat-no" title="function not covered" >map(l</span> =&gt; <span class="cstat-no" title="statement not covered" >[l.name, l.value])</span>);</span>
+&nbsp;
+        const diasValor = <span class="cstat-no" title="statement not covered" >await usuarioService.getDiasValor(usuario);</span>
+<span class="cstat-no" title="statement not covered" >        estado.diasValor = new Map(diasValor.<span class="fstat-no" title="function not covered" >map(d</span> =&gt; <span class="cstat-no" title="statement not covered" >[d.timestamp, d.value])</span>);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        estado.rachaEnviosAC = await usuarioService.getRachaEnviosCorrectos(usuario);</span>
+<span class="cstat-no" title="statement not covered" >        estado.rachaEnviosACMax = estado.rachaEnviosAC;</span>
+<span class="cstat-no" title="statement not covered" >        estado.rachaDiasEnvio = await usuarioService.getRachaDiasEnviosConsecutivos(usuario);</span>
+<span class="cstat-no" title="statement not covered" >        estado.rachaDiasEnvioMax = estado.rachaDiasEnvio;</span>
+<span class="cstat-no" title="statement not covered" >        estado.ultimoDiaEnvio = await usuarioService.getUltimoEnvioUsuario(usuario);</span>
+<span class="cstat-no" title="statement not covered" >        estado.horas = new Set(await usuarioService.getHoras(usuario));</span>
+<span class="cstat-no" title="statement not covered" >        estado.logros = new Set(await logrosService.getLogros(usuario));</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    private async c</span>argarDatosEstadoProblema(estado: EstadoProblema, problema: string) {
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        estado.envios = await problemaService.getNumEnvios(problema);</span>
+<span class="cstat-no" title="statement not covered" >        estado.enviosAC = await problemaService.getNumEnviosAC(problema);</span>
+<span class="cstat-no" title="statement not covered" >        estado.mejorTiempo = await problemaService.getMejorTiempo(problema);</span>
+<span class="cstat-no" title="statement not covered" >        estado.tiempoTotal = await problemaService.getTiempoTotal(problema);</span>
+&nbsp;
+        const resultados = <span class="cstat-no" title="statement not covered" >await problemaService.getResultados(problema);</span>
+<span class="cstat-no" title="statement not covered" >        estado.resultados = new Map(resultados.<span class="fstat-no" title="function not covered" >map(r</span> =&gt; <span class="cstat-no" title="statement not covered" >[r.name, r.value])</span>);</span>
+&nbsp;
+        const lenguajes = <span class="cstat-no" title="statement not covered" >await problemaService.getLenguajes(problema);</span>
+<span class="cstat-no" title="statement not covered" >        estado.lenguajes = new Map(lenguajes.<span class="fstat-no" title="function not covered" >map(l</span> =&gt; <span class="cstat-no" title="statement not covered" >[l.name, l.value])</span>);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        estado.tiemposOrdenados = await problemaService.getTiemposOrdenados(problema);</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public async g</span>etEstadosActualizados(estadoUsuario: EstadoUsuario, estadoProblema: EstadoProblema, envio: EnvioProcesado) {
+        const hoy = <span class="cstat-no" title="statement not covered" >new Date();</span>
+<span class="cstat-no" title="statement not covered" >        hoy.setUTCHours(0, 0, 0, 0);</span>
+        const fechaAnio = <span class="cstat-no" title="statement not covered" >hoy.getTime() / 1000 - 365 * 24 * 3600;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.actualizarEstadoUsuario(estadoUsuario, envio, fechaAnio);</span>
+<span class="cstat-no" title="statement not covered" >        this.actualizarEstadoProblema(estadoProblema, envio);</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    private actualizarEstadoUsuario(</span>estadoUsuario: EstadoUsuario, envio: EnvioProcesado, fechaAnio: number) {
+&nbsp;
+        //NUMERO DE ENVIOS
+        //se incrementa el total de envios del usuario
+<span class="cstat-no" title="statement not covered" >        estadoUsuario.numEnvios++;</span>
+&nbsp;
+        //RESULTADOS
+        //se registra el resultado del envio
+<span class="cstat-no" title="statement not covered" >        estadoUsuario.resultados.set(envio.resultado, (estadoUsuario.resultados.get(envio.resultado) ?? 0) + 1);</span>
+&nbsp;
+        //HORAS A LAS QUE HA HECHO ENVIOS
+        //se registra la hora del envio
+<span class="cstat-no" title="statement not covered" >        estadoUsuario.horas.add(envio.hora);</span>
+&nbsp;
+        //LENGUAJES
+        //se registra el lenguaje usado y su conteo
+<span class="cstat-no" title="statement not covered" >        estadoUsuario.lenguajes.add(envio.lenguaje);</span>
+<span class="cstat-no" title="statement not covered" >        estadoUsuario.lenguajesConteo.set(envio.lenguaje, (estadoUsuario.lenguajesConteo.get(envio.lenguaje) ?? 0) + 1);</span>
+&nbsp;
+        //ENVIOS POR DIA
+        //se registra el envio en el dia correspondiente
+&nbsp;
+        //if (envio.fecha &gt;= fechaAnio) { //TODO descomentar esto
+<span class="cstat-no" title="statement not covered" >            estadoUsuario.diasValor.set(envio.fecha, (estadoUsuario.diasValor.get(envio.fecha) ?? 0) + 1);</span>
+        //}
+&nbsp;
+        //RACHA DE DIASs
+        //si el ultimo envio fue exactamente el dia anterior, se incrementa la racha de dias consecutivos
+        //si fue hace mas de un dia, la racha se reinicia a 0
+<span class="cstat-no" title="statement not covered" >        if (estadoUsuario.ultimoDiaEnvio &lt; (envio.fecha - 24 * 60 * 60))</span>
+<span class="cstat-no" title="statement not covered" >            estadoUsuario.rachaDiasEnvio = 0;</span>
+        else if (<span class="cstat-no" title="statement not covered" >estadoUsuario.ultimoDiaEnvio === envio.fecha - 24 * 60 * 60)</span>
+<span class="cstat-no" title="statement not covered" >            estadoUsuario.rachaDiasEnvio++;</span>
+&nbsp;
+        //si la racha de dias consecutivos actual supera el maximo registrado, se actualiza
+<span class="cstat-no" title="statement not covered" >        if (estadoUsuario.rachaDiasEnvio &gt; estadoUsuario.rachaDiasEnvioMax)</span>
+<span class="cstat-no" title="statement not covered" >            estadoUsuario.rachaDiasEnvioMax = estadoUsuario.rachaDiasEnvio;</span>
+&nbsp;
+        //se marca el nuevo ultimo dia
+<span class="cstat-no" title="statement not covered" >        estadoUsuario.ultimoDiaEnvio = envio.fecha;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (envio.resultado === "AC") {</span>
+&nbsp;
+            //PROBLEMAS RESUELTOS
+            //se registra el problema como resuelto
+<span class="cstat-no" title="statement not covered" >            estadoUsuario.problemasAC.add(envio.problema);</span>
+&nbsp;
+            //PROBLEMAS RESUELTOS POR LENGUAJE
+            //se registra el problema como resuelto con este lenguaje
+<span class="cstat-no" title="statement not covered" >            if (!estadoUsuario.lenguajesProblemasResueltos.has(envio.lenguaje))</span>
+<span class="cstat-no" title="statement not covered" >                estadoUsuario.lenguajesProblemasResueltos.set(envio.lenguaje, new Set());</span>
+<span class="cstat-no" title="statement not covered" >            estadoUsuario.lenguajesProblemasResueltos.get(envio.lenguaje)!.add(envio.problema);</span>
+&nbsp;
+            //ACIERTOS POR LENGUAJE
+            //se incrementa el conteo de ACs por lenguaje
+<span class="cstat-no" title="statement not covered" >            estadoUsuario.lenguajesAC.set(envio.lenguaje, (estadoUsuario.lenguajesAC.get(envio.lenguaje) ?? 0) + 1);</span>
+&nbsp;
+            //RACHA DE ENVIOS AC 
+            //se incrementa la racha de envios AC
+<span class="cstat-no" title="statement not covered" >            estadoUsuario.rachaEnviosAC++;</span>
+<span class="cstat-no" title="statement not covered" >            if (estadoUsuario.rachaEnviosAC &gt; estadoUsuario.rachaEnviosACMax)</span>
+<span class="cstat-no" title="statement not covered" >                estadoUsuario.rachaEnviosACMax = estadoUsuario.rachaEnviosAC;</span>
+        }
+        else {
+&nbsp;
+            //PROBLEMAS NO RESUELTOS
+            //se registra el problema como intentado sin exito
+<span class="cstat-no" title="statement not covered" >            estadoUsuario.problemasNoAC.add(envio.problema);</span>
+&nbsp;
+            //RACHA DE ENVIOS AC
+            //un envio incorrecto rompe la racha de ACs consecutivos
+<span class="cstat-no" title="statement not covered" >            estadoUsuario.rachaEnviosAC = 0;</span>
+        }
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    private actualizarEstadoProblema(</span>estadoProblema: EstadoProblema, envio: EnvioProcesado) {
+&nbsp;
+        //se registra el resultado y el lenguaje en el estado del problema
+<span class="cstat-no" title="statement not covered" >        estadoProblema.envios++;</span>
+<span class="cstat-no" title="statement not covered" >        estadoProblema.resultados.set(envio.resultado, (estadoProblema.resultados.get(envio.resultado) ?? 0) + 1);</span>
+<span class="cstat-no" title="statement not covered" >        estadoProblema.lenguajes.set(envio.lenguaje, (estadoProblema.lenguajes.get(envio.lenguaje) ?? 0) + 1);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (envio.resultado === "AC") {</span>
+&nbsp;
+            //se incrementa el total de envios AC del problema
+<span class="cstat-no" title="statement not covered" >            estadoProblema.enviosAC++;</span>
+&nbsp;
+            //se actualiza el mejor tiempo y el tiempo total del problema
+<span class="cstat-no" title="statement not covered" >            estadoProblema.tiempoTotal += envio.tiempo;</span>
+&nbsp;
+            //si el tiempo de este envio es mejor que el mejor registrado, se actualiza
+<span class="cstat-no" title="statement not covered" >            if (envio.tiempo &lt;= (estadoProblema.mejorTiempo ?? Infinity))</span>
+<span class="cstat-no" title="statement not covered" >                estadoProblema.mejorTiempo = envio.tiempo;</span>
+&nbsp;
+            //se inserta el tiempo en el array ordenado para el ranking
+            const pos = <span class="cstat-no" title="statement not covered" >estadoProblema.tiemposOrdenados.<span class="fstat-no" title="function not covered" >findIndex(t</span> =&gt; <span class="cstat-no" title="statement not covered" >t &gt; envio.tiempo);</span></span>
+<span class="cstat-no" title="statement not covered" >            if (pos === -1)</span>
+<span class="cstat-no" title="statement not covered" >                estadoProblema.tiemposOrdenados.push(envio.tiempo);</span>
+            else
+<span class="cstat-no" title="statement not covered" >                estadoProblema.tiemposOrdenados.splice(pos, 0, envio.tiempo);</span>
+&nbsp;
+            //se registra el tiempo del envio
+<span class="cstat-no" title="statement not covered" >            estadoProblema.tiemposEnvios.set(envio.envioId, envio.tiempo);</span>
+&nbsp;
+            //se actualiza el indice del ultimo envio
+<span class="cstat-no" title="statement not covered" >            estadoProblema.posUltimoEnvio = pos;</span>
+        }
+    }
+&nbsp;
+    //TODO nuevo hacia arriba
+    //=======================================================================
 &nbsp;
     /**
      * Inicializa los estados internos de usuarios y problemas cargando los datos actuales desde la base de datos.
      * @param envios - Array de envios del bloque a procesar
      * @returns Objeto con estadosUsuarios, estadosProblemas
      */
-<span class="fstat-no" title="function not covered" >    public async i</span>nitEstados(envios: EnvioProcesado[]) {
-        
+<span class="fstat-no" title="function not covered" >    public async e</span>stadosActuales(envios: EnvioProcesado[]) {
+&nbsp;
 <span class="cstat-no" title="statement not covered" >        this.estadosUsuarios = new Map&lt;string, EstadoUsuario&gt;();</span>
 <span class="cstat-no" title="statement not covered" >        this.estadosProblemas = new Map&lt;string, EstadoProblema&gt;();</span>
 &nbsp;
@@ -743,12 +1328,12 @@ class EstadosService {
      * @param envios - Array de envios a procesar en orden.
      * @yields Objeto con estadosUsuarios y estadosProblemas actualizados junto al envio que los modifico.
      */
-<span class="fstat-no" title="function not covered" >    public async * g</span>etEstados(envios: EnvioProcesado[]) {
+<span class="fstat-no" title="function not covered" >    public async * g</span>etEstados(envios: EnvioProcesado[], fechaAnio: number) {
 &nbsp;
 <span class="cstat-no" title="statement not covered" >        for (const envio of envios) {</span>
             //se actualizan los estados que han sido modificados por el envio
-<span class="cstat-no" title="statement not covered" >            this.actualizarEstadoUsuario(envio.usuario, envio);</span>
-<span class="cstat-no" title="statement not covered" >            this.actualizarEstadoProblema(envio.problema, envio);</span>
+<span class="cstat-no" title="statement not covered" >            this.actualizarEstadoUsuarioAAA(envio.usuario, envio, fechaAnio);</span>
+<span class="cstat-no" title="statement not covered" >            this.actualizarEstadoProblemaAAA(envio.problema, envio);</span>
 &nbsp;
             //se devuelven los mapas actualizados junto con el envio
 <span class="cstat-no" title="statement not covered" >            yield {</span>
@@ -819,34 +1404,49 @@ class EstadosService {
             logros: new Set(),
         }
     }
-    
+&nbsp;
     /**
      * Aplica el impacto de un envio sobre el estado del usuario.
      * @param usuario - Identificador del usuario a actualizar.
      * @param envio - Envio que genera el cambio de estado.
+     * @param fechaAnio - dia desde el cual se tienen en cuenta para los envios del ultimo año.
      */
-<span class="fstat-no" title="function not covered" >    private actualizarEstadoUsuario(</span>usuario: string, envio: EnvioProcesado) {
+<span class="fstat-no" title="function not covered" >    private actualizarEstadoUsuarioAAA(</span>usuario: string, envio: EnvioProcesado, fechaAnio: number) {
 &nbsp;
         const estadoUsuario = <span class="cstat-no" title="statement not covered" >this.estadosUsuarios.get(usuario) </span>as EstadoUsuario;
 &nbsp;
+        //NUMERO DE ENVIOS
         //se incrementa el total de envios del usuario
 <span class="cstat-no" title="statement not covered" >        estadoUsuario.numEnvios++;</span>
+&nbsp;
+        //RESULTADOS
         //se registra el resultado del envio
 <span class="cstat-no" title="statement not covered" >        estadoUsuario.resultados.set(envio.resultado, (estadoUsuario.resultados.get(envio.resultado) ?? 0) + 1);</span>
+&nbsp;
+        //HORAS A LAS QUE HA HECHO ENVIOS
         //se registra la hora del envio
 <span class="cstat-no" title="statement not covered" >        estadoUsuario.horas.add(envio.hora);</span>
+&nbsp;
+        //LENGUAJES
         //se registra el lenguaje usado y su conteo
 <span class="cstat-no" title="statement not covered" >        estadoUsuario.lenguajes.add(envio.lenguaje);</span>
 <span class="cstat-no" title="statement not covered" >        estadoUsuario.lenguajesConteo.set(envio.lenguaje, (estadoUsuario.lenguajesConteo.get(envio.lenguaje) ?? 0) + 1);</span>
-        //se registra el envio en el dia correspondiente
-<span class="cstat-no" title="statement not covered" >        estadoUsuario.diasValor.set(envio.fecha, (estadoUsuario.diasValor.get(envio.fecha) ?? 0) + 1);</span>
 &nbsp;
+        //ENVIOS POR DIA
+        //se registra el envio en el dia correspondiente
+        //if (envio.fecha &gt;= fechaAnio) { //TODO descomentar esto
+<span class="cstat-no" title="statement not covered" >        estadoUsuario.diasValor.set(envio.fecha, (estadoUsuario.diasValor.get(envio.fecha) ?? 0) + 1);</span>
+        //}
+&nbsp;
+        //RACHA DE DIAS
         //si el ultimo envio fue exactamente el dia anterior, se incrementa la racha de dias consecutivos
         //si fue hace mas de un dia, la racha se reinicia a 0
 <span class="cstat-no" title="statement not covered" >        if (estadoUsuario.ultimoDiaEnvio &lt; (envio.fecha - 24 * 60 * 60))</span>
 <span class="cstat-no" title="statement not covered" >            estadoUsuario.rachaDiasEnvio = 0;</span>
         else if (<span class="cstat-no" title="statement not covered" >estadoUsuario.ultimoDiaEnvio === envio.fecha - 24 * 60 * 60)</span>
 <span class="cstat-no" title="statement not covered" >            estadoUsuario.rachaDiasEnvio++;</span>
+&nbsp;
+        //si la racha de dias consecutivos actual supera el maximo registrado, se actualiza
 <span class="cstat-no" title="statement not covered" >        if (estadoUsuario.rachaDiasEnvio &gt; estadoUsuario.rachaDiasEnvioMax)</span>
 <span class="cstat-no" title="statement not covered" >            estadoUsuario.rachaDiasEnvioMax = estadoUsuario.rachaDiasEnvio;</span>
 &nbsp;
@@ -854,29 +1454,41 @@ class EstadosService {
 <span class="cstat-no" title="statement not covered" >        estadoUsuario.ultimoDiaEnvio = envio.fecha;</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >        if (envio.resultado === "AC") {</span>
+&nbsp;
+            //PROBLEMAS RESUELTOS
             //se registra el problema como resuelto
 <span class="cstat-no" title="statement not covered" >            estadoUsuario.problemasAC.add(envio.problema);</span>
+&nbsp;
+            //PROBLEMAS RESUELTOS POR LENGUAJE
             //se registra el problema como resuelto con este lenguaje
 <span class="cstat-no" title="statement not covered" >            if (!estadoUsuario.lenguajesProblemasResueltos.has(envio.lenguaje))</span>
 <span class="cstat-no" title="statement not covered" >                estadoUsuario.lenguajesProblemasResueltos.set(envio.lenguaje, new Set());</span>
 <span class="cstat-no" title="statement not covered" >            estadoUsuario.lenguajesProblemasResueltos.get(envio.lenguaje)!.add(envio.problema);</span>
+&nbsp;
+            //ACIERTOS POR LENGUAJE
             //se incrementa el conteo de ACs por lenguaje
 <span class="cstat-no" title="statement not covered" >            estadoUsuario.lenguajesAC.set(envio.lenguaje, (estadoUsuario.lenguajesAC.get(envio.lenguaje) ?? 0) + 1);</span>
+&nbsp;
+            //RACHA DE ENVIOS AC 
             //se incrementa la racha de envios AC
 <span class="cstat-no" title="statement not covered" >            estadoUsuario.rachaEnviosAC++;</span>
 <span class="cstat-no" title="statement not covered" >            if (estadoUsuario.rachaEnviosAC &gt; estadoUsuario.rachaEnviosACMax)</span>
 <span class="cstat-no" title="statement not covered" >                estadoUsuario.rachaEnviosACMax = estadoUsuario.rachaEnviosAC;</span>
         }
         else {
+&nbsp;
+            //PROBLEMAS NO RESUELTOS
             //se registra el problema como intentado sin exito
 <span class="cstat-no" title="statement not covered" >            estadoUsuario.problemasNoAC.add(envio.problema);</span>
+&nbsp;
+            //RACHA DE ENVIOS AC
             //un envio incorrecto rompe la racha de ACs consecutivos
 <span class="cstat-no" title="statement not covered" >            estadoUsuario.rachaEnviosAC = 0;</span>
         }
 &nbsp;
 <span class="cstat-no" title="statement not covered" >        this.estadosUsuarios.set(usuario, estadoUsuario);</span>
     }
-    
+&nbsp;
     /**
      * Devuelve una copia profunda del mapa de estados de usuarios.
      * @param estados - Mapa original de estados de usuarios.
@@ -884,7 +1496,7 @@ class EstadosService {
      */
 <span class="fstat-no" title="function not covered" >    private clonarEstadosUsuarios(</span>estados: Map&lt;string, EstadoUsuario&gt;): Map&lt;string, EstadoUsuario&gt; {
         const clon = <span class="cstat-no" title="statement not covered" >new Map&lt;string, EstadoUsuario&gt;();</span>
-        
+&nbsp;
         //se usan los campos del estado y se clonan los objetos mutables para evitar referencias compartidas
 <span class="cstat-no" title="statement not covered" >        for (const [usuario, estado] of estados) {</span>
 <span class="cstat-no" title="statement not covered" >            clon.set(usuario, {</span>
@@ -943,7 +1555,7 @@ class EstadosService {
             resultados: new Map(),
             lenguajes: new Map(),
             tiemposOrdenados: [],
-            
+&nbsp;
             posUltimoEnvio: -1,
             tiemposEnvios: new Map()
         }
@@ -954,7 +1566,7 @@ class EstadosService {
      * @param problema - Identificador del problema a actualizar.
      * @param envio - Envio que genera el cambio de estado.
      */
-<span class="fstat-no" title="function not covered" >    private actualizarEstadoProblema(</span>problema: string, envio: EnvioProcesado) {
+<span class="fstat-no" title="function not covered" >    private actualizarEstadoProblemaAAA(</span>problema: string, envio: EnvioProcesado) {
 &nbsp;
         const estadoProblema = <span class="cstat-no" title="statement not covered" >this.estadosProblemas.get(problema) </span>as EstadoProblema;
 &nbsp;
@@ -977,9 +1589,9 @@ class EstadosService {
 &nbsp;
             //se inserta el tiempo en el array ordenado para el ranking
             const pos = <span class="cstat-no" title="statement not covered" >estadoProblema.tiemposOrdenados.<span class="fstat-no" title="function not covered" >findIndex(t</span> =&gt; <span class="cstat-no" title="statement not covered" >t &gt; envio.tiempo);</span></span>
-<span class="cstat-no" title="statement not covered" >            if (pos === -1) </span>
+<span class="cstat-no" title="statement not covered" >            if (pos === -1)</span>
 <span class="cstat-no" title="statement not covered" >                estadoProblema.tiemposOrdenados.push(envio.tiempo);</span>
-            else 
+            else
 <span class="cstat-no" title="statement not covered" >                estadoProblema.tiemposOrdenados.splice(pos, 0, envio.tiempo);</span>
 &nbsp;
             //se registra el tiempo del envio
@@ -999,7 +1611,7 @@ class EstadosService {
      */
 <span class="fstat-no" title="function not covered" >    private clonarEstadosProblemas(</span>estados: Map&lt;string, EstadoProblema&gt;): Map&lt;string, EstadoProblema&gt; {
         const clon = <span class="cstat-no" title="statement not covered" >new Map&lt;string, EstadoProblema&gt;();</span>
-        
+&nbsp;
         //se usan los campos del estado y se clonan los objetos mutables para evitar referencias compartidas
 <span class="cstat-no" title="statement not covered" >        for (const [problema, estado] of estados) {</span>
 <span class="cstat-no" title="statement not covered" >            clon.set(problema, {</span>
@@ -1014,23 +1626,23 @@ class EstadosService {
     }
 }
 &nbsp;
-export default new EstadosService();</pre></td></tr></table></pre>
+export default new EstadosBaseService();</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-04-30T20:02:39.645Z
+                at 2026-05-01T18:36:42.485Z
             </div>
-        <script src="../../prettify.js"></script>
+        <script src="../../../prettify.js"></script>
         <script>
             window.onload = function () {
                 prettyPrint();
             };
         </script>
-        <script src="../../sorter.js"></script>
-        <script src="../../block-navigation.js"></script>
+        <script src="../../../sorter.js"></script>
+        <script src="../../../block-navigation.js"></script>
     </body>
 </html>
     

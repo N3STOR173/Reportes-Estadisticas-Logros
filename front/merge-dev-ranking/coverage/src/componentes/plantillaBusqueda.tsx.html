@@ -134,7 +134,15 @@
 <a name='L69'></a><a href='#L69'>69</a>
 <a name='L70'></a><a href='#L70'>70</a>
 <a name='L71'></a><a href='#L71'>71</a>
-<a name='L72'></a><a href='#L72'>72</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -156,6 +164,14 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -227,47 +243,56 @@ export default function PlantillaBusqueda({
     children
 }: Props) {
     return (
-        &lt;div className="w-full px-4 sm:px-6 lg:px-8"&gt;
+        &lt;div className="w-full px-4 sm:px-6 lg:px-8 pb-3"&gt;
             &lt;div className="flex flex-col" style={{ minHeight: "calc(100dvh - 75px)" }}&gt;
 &nbsp;
-                {/* titulo y buscador */}
+                {/* titulo, descripcion y buscador */}
                 &lt;div className={`
-                    flex flex-col items-center flex-shrink-0 w-full transition-all duration-1000 ease-in-out
-                    ${hasResult ? "" : "mt-[calc(50dvh-155px)]"}
+                    flex flex-col items-center flex-shrink-0 w-full
+                    transition-all duration-700 ease-in-out
+                    ${hasResult ? "mt-4" : "mt-[calc(50dvh-155px)]"}
                 `}&gt;
+&nbsp;
+                    {/* titulo y descripcion desaparecen si hay resultado */}
                     &lt;div className={`
-                        transition-all duration-1000 ease-in-out text-center overflow-hidden
+                        text-center overflow-hidden
+                        transition-all duration-700 ease-in-out
                         ${hasResult
                             ? "opacity-0 max-h-0 mb-0 pointer-events-none"
-                            : "opacity-100 max-h-40 mb-4"
-                        }
+                            : "opacity-100 max-h-40 mb-4"}
                     `}&gt;
                         &lt;h1 className="text-3xl font-bold"&gt;{tituloBusqueda}&lt;/h1&gt;
                         &lt;p className="mt-3 text-muted"&gt;{descripcion}&lt;/p&gt;
                     &lt;/div&gt;
 &nbsp;
-                    &lt;div className={`w-full max-w-md ${hasResult ? "mt-6" : ""}`}&gt;
-                        {buscador}
+                    {/* buscador se coloca arriba o en el centro dependiento de si hay resultado o no */}
+                    &lt;div className={`
+                        transition-all duration-700 ease-in-out flex items-center gap-4
+                        ${hasResult ? "w-full" : "w-full max-w-md"}
+                    `}&gt;
+                        {hasResult &amp;&amp; (
+                            &lt;h1 className="text-2xl font-bold shrink-0" style={{ color: "#3a3a3a" }}&gt;
+                                {tituloResultado}
+                            &lt;/h1&gt;
+                        )}
+                        &lt;div className="flex-1"&gt;
+                            {buscador}
+                        &lt;/div&gt;
                     &lt;/div&gt;
 &nbsp;
                     {mensajeDeNoEncontrado &amp;&amp; (
-                        &lt;Alert variant="danger" className="mt-2"&gt;
+                        &lt;Alert variant="danger" className="mt-2 w-full"&gt;
                             {mensajeDeNoEncontrado}
                         &lt;/Alert&gt;
                     )}
-&nbsp;
-                    {hasResult &amp;&amp; (
-                        &lt;h1 className="mt-4 w-full text-left"&gt;{tituloResultado}&lt;/h1&gt;
-                    )}
                 &lt;/div&gt;
 &nbsp;
-                {/* componente de informacion despues de la busqueda */}
+                {/* los componentes con la informacion aparecen de abajo hacia arriba */}
                 &lt;div className={`
-                    transition-all duration-1000 ease-in-out
+                    transition-all duration-700 ease-in-out mt-4
                     ${hasResult
-                        ? "opacity-100 translate-y-0 mt-2"
-                        : "opacity-0 translate-y-12 pointer-events-none h-0 overflow-hidden"
-                    }
+                        ? "opacity-100 translate-y-0 flex-1 min-h-0"
+                        : "opacity-0 translate-y-12 pointer-events-none h-0 overflow-hidden"}
                 `}&gt;
                     {children}
                 &lt;/div&gt;
@@ -275,15 +300,14 @@ export default function PlantillaBusqueda({
             &lt;/div&gt;
         &lt;/div&gt;
     );
-}
-&nbsp;</pre></td></tr></table></pre>
+}</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-04-30T19:02:21.061Z
+                at 2026-05-01T11:32:40.144Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

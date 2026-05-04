@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/101</span>
+                <span class='fraction'>0/109</span>
             </div>
         
             
@@ -39,14 +39,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/22</span>
+                <span class='fraction'>0/23</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/91</span>
+                <span class='fraction'>0/99</span>
             </div>
         
             
@@ -343,7 +343,17 @@
 <a name='L278'></a><a href='#L278'>278</a>
 <a name='L279'></a><a href='#L279'>279</a>
 <a name='L280'></a><a href='#L280'>280</a>
-<a name='L281'></a><a href='#L281'>281</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L281'></a><a href='#L281'>281</a>
+<a name='L282'></a><a href='#L282'>282</a>
+<a name='L283'></a><a href='#L283'>283</a>
+<a name='L284'></a><a href='#L284'>284</a>
+<a name='L285'></a><a href='#L285'>285</a>
+<a name='L286'></a><a href='#L286'>286</a>
+<a name='L287'></a><a href='#L287'>287</a>
+<a name='L288'></a><a href='#L288'>288</a>
+<a name='L289'></a><a href='#L289'>289</a>
+<a name='L290'></a><a href='#L290'>290</a>
+<a name='L291'></a><a href='#L291'>291</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -363,8 +373,17 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -586,6 +605,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -641,6 +661,15 @@ type InfoActualizacionesRanking = {
     updates: ActualizacionesRanking[],
     minPos: number, //primera posicion del ranking afectada
     maxPos: number //ultima possicion del ranking afectada
+}
+&nbsp;
+export <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >enum N</span>ivelUsuario {</span>
+<span class="cstat-no" title="statement not covered" >  APRENDIZ = "Aprendiz",</span>
+<span class="cstat-no" title="statement not covered" >  COMPETENTE = "Competente",</span>
+<span class="cstat-no" title="statement not covered" >  HABIL = "Hábil",</span>
+<span class="cstat-no" title="statement not covered" >  ESPECIALISTA = "Especialista",</span>
+<span class="cstat-no" title="statement not covered" >  MAESTRO = "Maestro",</span>
+<span class="cstat-no" title="statement not covered" >  SIN_NIVEL = ""</span>
 }
 &nbsp;
 class XPService {
@@ -866,7 +895,8 @@ class XPService {
      * @returns String del nombre del nivel al que pertenece.
      */
 <span class="fstat-no" title="function not covered" >    async g</span>etNivelUsuario(usuario: string) {
-        const xp = <span class="cstat-no" title="statement not covered" >await xpDAO.getXPUsuario(usuario);</span>
+        const u = <span class="cstat-no" title="statement not covered" >usuario.toLowerCase().normalize("NFC").trim();</span>
+        const xp = <span class="cstat-no" title="statement not covered" >await xpDAO.getXPUsuario(u);</span>
 <span class="cstat-no" title="statement not covered" >        return this.getNivelFromXP(xp);</span>
     }
 &nbsp;
@@ -875,15 +905,15 @@ class XPService {
      * @param xp - Cantidad de xp.
      * @returns String correspondiente al nivel.
      */
-<span class="fstat-no" title="function not covered" >    private getNivelFromXP(</span>xp: number) {
+<span class="fstat-no" title="function not covered" >    private getNivelFromXP(</span>xp: number): NivelUsuario {
 <span class="cstat-no" title="statement not covered" >        if (xp !== -1) {</span>
-<span class="cstat-no" title="statement not covered" >            if (xp &lt;= 100) <span class="cstat-no" title="statement not covered" >return "Aprendiz"</span></span>
-<span class="cstat-no" title="statement not covered" >            if (xp &lt;= 500) <span class="cstat-no" title="statement not covered" >return "Competente"</span></span>
-<span class="cstat-no" title="statement not covered" >            if (xp &lt;= 1000) <span class="cstat-no" title="statement not covered" >return "Hábil"</span></span>
-<span class="cstat-no" title="statement not covered" >            if (xp &lt;= 2000) <span class="cstat-no" title="statement not covered" >return "Especialista"</span></span>
-<span class="cstat-no" title="statement not covered" >            return "Maestro"</span>
+<span class="cstat-no" title="statement not covered" >            if (xp &lt;= 100) <span class="cstat-no" title="statement not covered" >return NivelUsuario.APRENDIZ;</span></span>
+<span class="cstat-no" title="statement not covered" >            if (xp &lt;= 500) <span class="cstat-no" title="statement not covered" >return NivelUsuario.COMPETENTE;</span></span>
+<span class="cstat-no" title="statement not covered" >            if (xp &lt;= 1000) <span class="cstat-no" title="statement not covered" >return NivelUsuario.HABIL;</span></span>
+<span class="cstat-no" title="statement not covered" >            if (xp &lt;= 2000) <span class="cstat-no" title="statement not covered" >return NivelUsuario.ESPECIALISTA;</span></span>
+<span class="cstat-no" title="statement not covered" >            return NivelUsuario.MAESTRO;</span>
         }
-<span class="cstat-no" title="statement not covered" >        return "";</span>
+<span class="cstat-no" title="statement not covered" >        return NivelUsuario.SIN_NIVEL;</span>
     }
 &nbsp;
     /**
@@ -910,7 +940,7 @@ export default new XPService();</pre></td></tr></table></pre>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-05-02T20:18:33.563Z
+                at 2026-05-04T11:36:55.953Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

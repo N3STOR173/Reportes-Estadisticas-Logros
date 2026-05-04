@@ -25,14 +25,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/19</span>
+                <span class='fraction'>0/25</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/8</span>
+                <span class='fraction'>0/14</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/19</span>
+                <span class='fraction'>0/22</span>
             </div>
         
             
@@ -197,7 +197,10 @@
 <a name='L132'></a><a href='#L132'>132</a>
 <a name='L133'></a><a href='#L133'>133</a>
 <a name='L134'></a><a href='#L134'>134</a>
-<a name='L135'></a><a href='#L135'>135</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L135'></a><a href='#L135'>135</a>
+<a name='L136'></a><a href='#L136'>136</a>
+<a name='L137'></a><a href='#L137'>137</a>
+<a name='L138'></a><a href='#L138'>138</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -223,6 +226,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -231,9 +235,11 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -354,6 +360,7 @@ export default function <span class="fstat-no" title="function not covered" >Est
     //ENVIOS
     const [envios, setEnvios] = <span class="cstat-no" title="statement not covered" >useState&lt;{ timeStamp: number, value: number }[]&gt;([]);</span>
 <span class="cstat-no" title="statement not covered" >    useEffect(<span class="fstat-no" title="function not covered" >() =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >        if(!usuario) <span class="cstat-no" title="statement not covered" >return;</span></span>
 <span class="cstat-no" title="statement not covered" >        fetch(`/api/usuarios/${usuario}/enviosAnio`)</span>
             .then(<span class="fstat-no" title="function not covered" >response =&gt; <span class="cstat-no" title="statement not covered" >r</span>esponse.json())</span>
             .then(<span class="fstat-no" title="function not covered" >data =&gt; <span class="cstat-no" title="statement not covered" >s</span>etEnvios(data))</span>;
@@ -362,6 +369,7 @@ export default function <span class="fstat-no" title="function not covered" >Est
     //RESULTADOS
     const [resultados, setResultados] = <span class="cstat-no" title="statement not covered" >useState&lt;{ name: string; value: number }[]&gt;();</span>
 <span class="cstat-no" title="statement not covered" >    useEffect(<span class="fstat-no" title="function not covered" >() =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >        if(!usuario) <span class="cstat-no" title="statement not covered" >return;</span></span>
 <span class="cstat-no" title="statement not covered" >        fetch(`/api/usuarios/${usuario}/resultados`)</span>
             .then(<span class="fstat-no" title="function not covered" >response =&gt; <span class="cstat-no" title="statement not covered" >r</span>esponse.json())</span>
             .then(<span class="fstat-no" title="function not covered" >data =&gt; <span class="cstat-no" title="statement not covered" >s</span>etResultados(data))</span>;
@@ -370,6 +378,7 @@ export default function <span class="fstat-no" title="function not covered" >Est
     //LENGUAJES
     const [lenguajes, setLenguajes] = <span class="cstat-no" title="statement not covered" >useState&lt;{ name: string; value: number }[]&gt;();</span>
 <span class="cstat-no" title="statement not covered" >    useEffect(<span class="fstat-no" title="function not covered" >() =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >        if(!usuario) <span class="cstat-no" title="statement not covered" >return;</span></span>
 <span class="cstat-no" title="statement not covered" >        fetch(`/api/usuarios/${usuario}/lenguajes`)</span>
             .then(<span class="fstat-no" title="function not covered" >response =&gt; <span class="cstat-no" title="statement not covered" >r</span>esponse.json())</span>
             .then(<span class="fstat-no" title="function not covered" >data =&gt; <span class="cstat-no" title="statement not covered" >s</span>etLenguajes(data))</span>;
@@ -472,7 +481,7 @@ export default function <span class="fstat-no" title="function not covered" >Est
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-05-04T11:37:24.798Z
+                at 2026-05-04T14:59:52.034Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

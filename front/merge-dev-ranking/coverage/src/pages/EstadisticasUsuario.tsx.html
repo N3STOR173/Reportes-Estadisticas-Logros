@@ -25,14 +25,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/20</span>
+                <span class='fraction'>0/23</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/17</span>
+                <span class='fraction'>0/24</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/19</span>
+                <span class='fraction'>0/21</span>
             </div>
         
             
@@ -138,7 +138,11 @@
 <a name='L73'></a><a href='#L73'>73</a>
 <a name='L74'></a><a href='#L74'>74</a>
 <a name='L75'></a><a href='#L75'>75</a>
-<a name='L76'></a><a href='#L76'>76</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -154,9 +158,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -166,12 +167,9 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -179,7 +177,17 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -229,9 +237,6 @@ export default function <span class="fstat-no" title="function not covered" >Est
     const params = <span class="cstat-no" title="statement not covered" >useParams();</span>
 &nbsp;
     const usuario = <span class="cstat-no" title="statement not covered" >params.usuario || localStorage.getItem("usuarioActual") || "";</span>
-<span class="cstat-no" title="statement not covered" >    if(usuario !== localStorage.getItem("usuarioActual")) {</span>
-<span class="cstat-no" title="statement not covered" >        localStorage.setItem("usuarioActual", usuario);</span>
-    }
 &nbsp;
     const [usuarioExiste, setUsuarioExiste] = <span class="cstat-no" title="statement not covered" >useState&lt;boolean | null&gt;(null);</span>
 <span class="cstat-no" title="statement not covered" >    useEffect(<span class="fstat-no" title="function not covered" >() =&gt; {</span></span>
@@ -241,21 +246,28 @@ export default function <span class="fstat-no" title="function not covered" >Est
             .then(<span class="fstat-no" title="function not covered" >res =&gt; <span class="cstat-no" title="statement not covered" >r</span>es.json())</span>
             .then(<span class="fstat-no" title="function not covered" >data =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >                setUsuarioExiste(data.existe);</span>
+<span class="cstat-no" title="statement not covered" >                if (data.existe &amp;&amp; usuario !== localStorage.getItem("usuarioActual")) {</span>
+<span class="cstat-no" title="statement not covered" >                    localStorage.setItem("usuarioActual", usuario);</span>
+                }
             });
     }, [usuario]);
 &nbsp;
     const navigate = <span class="cstat-no" title="statement not covered" >useNavigate();</span>
 <span class="cstat-no" title="statement not covered" >    useEffect(<span class="fstat-no" title="function not covered" >() =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >        if(!usuarioExiste) <span class="cstat-no" title="statement not covered" >return;</span></span>
 <span class="cstat-no" title="statement not covered" >        navigate(`/usuarios/estadisticas/${usuario}`, { replace: true });</span>
-    }, [usuario, navigate]);
+    }, [usuario, usuarioExiste, navigate]);
 &nbsp;
     // NIVEL
     const [nivel, setNivel] = <span class="cstat-no" title="statement not covered" >useState&lt;NivelUsuario&gt;(NivelUsuario.SIN_NIVEL);</span>
 <span class="cstat-no" title="statement not covered" >    useEffect(<span class="fstat-no" title="function not covered" >() =&gt; {</span></span>
-<span class="cstat-no" title="statement not covered" >        fetch(`/api/usuarios/${usuario}/nivel`)</span>
-            .then(<span class="fstat-no" title="function not covered" >response =&gt; <span class="cstat-no" title="statement not covered" >r</span>esponse.json())</span>
-            .then(<span class="fstat-no" title="function not covered" >data =&gt; <span class="cstat-no" title="statement not covered" >s</span>etNivel(data))</span>;
-    }, [usuario]);
+<span class="cstat-no" title="statement not covered" >        if (usuarioExiste) {</span>
+<span class="cstat-no" title="statement not covered" >            fetch(`/api/usuarios/${usuario}/nivel`)</span>
+                .then(<span class="fstat-no" title="function not covered" >response =&gt; <span class="cstat-no" title="statement not covered" >r</span>esponse.json())</span>
+                .then(<span class="fstat-no" title="function not covered" >data =&gt; <span class="cstat-no" title="statement not covered" >s</span>etNivel(data))</span>;
+        }
+&nbsp;
+    }, [usuario, usuarioExiste]);
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    return (</span>
         &lt;PlantillaBusqueda
@@ -285,7 +297,7 @@ export default function <span class="fstat-no" title="function not covered" >Est
                     }
                 /&gt;
             }
-            children={usuario &amp;&amp; &lt;EstadisticasUsuarioComp key={usuario} usuario={usuario} /&gt;}
+            children={usuarioExiste === true &amp;&amp; usuario !== "" &amp;&amp; &lt;EstadisticasUsuarioComp key={usuario} usuario={usuario} /&gt;}
         /&gt;
     )
 }</pre></td></tr></table></pre>
@@ -295,7 +307,7 @@ export default function <span class="fstat-no" title="function not covered" >Est
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-05-04T11:37:24.798Z
+                at 2026-05-04T14:59:52.034Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

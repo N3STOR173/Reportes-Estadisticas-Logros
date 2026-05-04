@@ -130,7 +130,15 @@
 <a name='L65'></a><a href='#L65'>65</a>
 <a name='L66'></a><a href='#L66'>66</a>
 <a name='L67'></a><a href='#L67'>67</a>
-<a name='L68'></a><a href='#L68'>68</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -139,23 +147,26 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -172,6 +183,11 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -204,6 +220,9 @@ import Badge from 'react-bootstrap/Badge';
 import PlantillaBusqueda from "../componentes/plantillaBusqueda";
 import Buscador from "../componentes/Buscador/buscador";
 import LogrosUsuarioComp from "../componentes/LogrosUsuarioComp/logrosUsuarioComp";
+import EtiquetaNivel from "../componentes/etiquetaNivel";
+import { EventType, formatEvent } from "shared";
+import { NivelUsuario } from "shared/NivelUsuarios";
 &nbsp;
 export default function <span class="fstat-no" title="function not covered" >LogrosUsuario() {</span>
     const params = <span class="cstat-no" title="statement not covered" >useParams();</span>
@@ -231,7 +250,7 @@ export default function <span class="fstat-no" title="function not covered" >Log
     }, [usuario, navigate]);
 &nbsp;
     // NIVEL
-    const [nivel, setNivel] = <span class="cstat-no" title="statement not covered" >useState&lt;string&gt;("");</span>
+    const [nivel, setNivel] = <span class="cstat-no" title="statement not covered" >useState&lt;NivelUsuario&gt;(NivelUsuario.SIN_NIVEL);</span>
 <span class="cstat-no" title="statement not covered" >    useEffect(<span class="fstat-no" title="function not covered" >() =&gt; {</span></span>
 <span class="cstat-no" title="statement not covered" >        fetch(`/api/usuarios/${usuario}/nivel`)</span>
             .then(<span class="fstat-no" title="function not covered" >response =&gt; <span class="cstat-no" title="statement not covered" >r</span>esponse.json())</span>
@@ -254,7 +273,12 @@ export default function <span class="fstat-no" title="function not covered" >Log
                             &lt;span className="text-truncate"&gt;
                                 Logros de &lt;b className="ms-1"&gt;{usuario}&lt;/b&gt;
                             &lt;/span&gt;
-                            {nivel &amp;&amp; &lt;Badge bg="secondary" className="ms-2"&gt;{nivel}&lt;/Badge&gt;}
+                            {nivel &amp;&amp;
+                                &lt;EtiquetaNivel
+                                    evento={formatEvent(usuario, EventType.USUARIO_NIVEL)}
+                                    nivel={nivel}
+                                /&gt;
+                            }
 &nbsp;
                         &lt;/&gt;
                         : undefined
@@ -271,7 +295,7 @@ export default function <span class="fstat-no" title="function not covered" >Log
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-05-02T20:19:07.989Z
+                at 2026-05-04T11:37:24.798Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

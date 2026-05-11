@@ -25,14 +25,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/25</span>
+                <span class='fraction'>0/27</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/12</span>
+                <span class='fraction'>0/14</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/23</span>
+                <span class='fraction'>0/25</span>
             </div>
         
             
@@ -186,7 +186,12 @@
 <a name='L121'></a><a href='#L121'>121</a>
 <a name='L122'></a><a href='#L122'>122</a>
 <a name='L123'></a><a href='#L123'>123</a>
-<a name='L124'></a><a href='#L124'>124</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L124'></a><a href='#L124'>124</a>
+<a name='L125'></a><a href='#L125'>125</a>
+<a name='L126'></a><a href='#L126'>126</a>
+<a name='L127'></a><a href='#L127'>127</a>
+<a name='L128'></a><a href='#L128'>128</a>
+<a name='L129'></a><a href='#L129'>129</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -230,6 +235,11 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -319,7 +329,7 @@ import { EventType } from "shared/EventTypes.ts";
 import BarraCarga from "./barraCarga";
 &nbsp;
 export default function <span class="fstat-no" title="function not covered" >Sidebar() {</span>
-  
+&nbsp;
   //porcentaje de carga inicial para la barra
   const [porcentajeCarga, setPorcentajeCarga] = <span class="cstat-no" title="statement not covered" >useState(0);</span>
 <span class="cstat-no" title="statement not covered" >  useEffect(<span class="fstat-no" title="function not covered" >() =&gt; {</span></span>
@@ -327,12 +337,12 @@ export default function <span class="fstat-no" title="function not covered" >Sid
       .then(<span class="fstat-no" title="function not covered" >res =&gt; <span class="cstat-no" title="statement not covered" >r</span>es.json())</span>
       .then(<span class="fstat-no" title="function not covered" >data =&gt; <span class="cstat-no" title="statement not covered" >s</span>etPorcentajeCarga(data))</span>;
   }, []);
-  
+&nbsp;
   //estado del offcanvas en pantallas pequeñas
   const [show, setShow] = <span class="cstat-no" title="statement not covered" >useState(false);</span>
   const handleClose = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >() =&gt; <span class="cstat-no" title="statement not covered" >s</span>etShow(false);</span></span>
   const handleShow = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >() =&gt; <span class="cstat-no" title="statement not covered" >s</span>etShow(true);</span></span>
-  
+&nbsp;
   //titulo que se muestra en la navbar de pantallas pequeñas segun la ruta
   const location = <span class="cstat-no" title="statement not covered" >useLocation();</span>
 &nbsp;
@@ -355,9 +365,14 @@ export default function <span class="fstat-no" title="function not covered" >Sid
 <span class="cstat-no" title="statement not covered" >    return "¡Acepta el reto!";</span>
   };
 &nbsp;
+  const usuario = <span class="cstat-no" title="statement not covered" >localStorage.getItem("usuarioActual");</span>
+  const rutaRanking = <span class="cstat-no" title="statement not covered" >usuario</span>
+    ? `/usuarios/ranking?usuarioActual=${usuario}`
+    : "/usuarios/ranking";
+&nbsp;
   const links = (
 <span class="cstat-no" title="statement not covered" >    &lt;&gt;</span>
-      &lt;Nav.Link as={NavLink} className="app-nav-link"  to="/"&gt;
+      &lt;Nav.Link as={NavLink} className="app-nav-link" to="/"&gt;
         &lt;FontAwesomeIcon icon={faHouseChimney} /&gt;Inicio&lt;/Nav.Link&gt;
 &nbsp;
       &lt;Nav.Link as={NavLink} className="app-nav-link" to={"/problemas"}&gt;
@@ -369,7 +384,7 @@ export default function <span class="fstat-no" title="function not covered" >Sid
       &lt;Nav.Link as={NavLink} className="app-nav-link" to={`/usuarios/logros`}&gt;
         &lt;FontAwesomeIcon icon={faAward} /&gt;Logros&lt;/Nav.Link&gt;
 &nbsp;
-      &lt;Nav.Link as={NavLink} className="app-nav-link" to="/usuarios/ranking"&gt;
+      &lt;Nav.Link as={NavLink} className="app-nav-link" to={rutaRanking}&gt;
         &lt;FontAwesomeIcon icon={faTableList} /&gt;Tabla de clasificación&lt;/Nav.Link&gt;
 &nbsp;
     &lt;/&gt;
@@ -405,7 +420,7 @@ export default function <span class="fstat-no" title="function not covered" >Sid
         &lt;/Nav&gt;
 &nbsp;
         &lt;div className="mt-auto"&gt;
-          &lt;BarraCarga evento={EventType.CARGA_ENVIOS} progresoInicial={porcentajeCarga}/&gt;
+          &lt;BarraCarga evento={EventType.CARGA_ENVIOS} progresoInicial={porcentajeCarga} /&gt;
         &lt;/div&gt;
       &lt;/div&gt;
 &nbsp;
@@ -426,7 +441,7 @@ export default function <span class="fstat-no" title="function not covered" >Sid
         &lt;Offcanvas.Body className="app-offcanvas-body d-flex flex-column"&gt;
           &lt;Nav className="flex-column gap-3 sidebar-links"&gt;{links}&lt;/Nav&gt;
           &lt;div className="mt-auto pt-3"&gt;
-            {porcentajeCarga &gt;= 0 &amp;&amp; &lt;BarraCarga evento={EventType.CARGA_ENVIOS} progresoInicial={porcentajeCarga}/&gt;}
+            {porcentajeCarga &gt;= 0 &amp;&amp; &lt;BarraCarga evento={EventType.CARGA_ENVIOS} progresoInicial={porcentajeCarga} /&gt;}
           &lt;/div&gt;
         &lt;/Offcanvas.Body&gt;
       &lt;/Offcanvas&gt;
@@ -439,7 +454,7 @@ export default function <span class="fstat-no" title="function not covered" >Sid
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-05-11T19:14:28.316Z
+                at 2026-05-11T19:51:13.197Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

@@ -359,8 +359,7 @@
 <a name='L294'></a><a href='#L294'>294</a>
 <a name='L295'></a><a href='#L295'>295</a>
 <a name='L296'></a><a href='#L296'>296</a>
-<a name='L297'></a><a href='#L297'>297</a>
-<a name='L298'></a><a href='#L298'>298</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L297'></a><a href='#L297'>297</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -581,19 +580,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -651,6 +637,18 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -877,20 +875,7 @@ class UsuarioService {
      * @param usuario - Identificador del usuario.
      * @returns Numero de dias consecutivos con envio.
      */
-<span class="fstat-no" title="function not covered" >    async g</span>etRachaDiasEnviosConsecutivosActual(usuario: string): Promise&lt;number&gt; {
-        
-        const ultimoEnvio = <span class="cstat-no" title="statement not covered" >await usuarioDAO.getUltimoEnvioUsuario(usuario);</span>
-        
-        const hoy = <span class="cstat-no" title="statement not covered" >new Date();</span>
-<span class="cstat-no" title="statement not covered" >        hoy.setHours(0,0,0,0);</span>
-        const hoyTimestamp:number = <span class="cstat-no" title="statement not covered" >hoy.getTime()/1000;</span>
-        const ayerTimestamp = <span class="cstat-no" title="statement not covered" >hoyTimestamp - 24 * 60 * 60;</span>
-&nbsp;
-        //excepcion si no se ha hecho un envio entre ayer y hoy 
-        //ya que la racha actual se actualiza cuando haga el siguiente envio
-<span class="cstat-no" title="statement not covered" >        if (ultimoEnvio !== hoyTimestamp &amp;&amp; ultimoEnvio !== ayerTimestamp)</span>
-<span class="cstat-no" title="statement not covered" >            return 0;</span>
-        
+<span class="fstat-no" title="function not covered" >    async g</span>etRachaDiasEnviosConsecutivosActual(usuario: string): Promise&lt;number&gt; {        
 <span class="cstat-no" title="statement not covered" >        return usuarioDAO.getRachaDiasEnviosConsecutivosActual(usuario);</span>
     }
 &nbsp;
@@ -949,6 +934,18 @@ class UsuarioService {
      * @returns Numero de dias consecutivos actuales con envio.
      */
 <span class="fstat-no" title="function not covered" >    async g</span>etRachaActualDiasEnviosConsecutivos(usuario: string): Promise&lt;number&gt; {
+        const ultimoEnvio = <span class="cstat-no" title="statement not covered" >await usuarioDAO.getUltimoEnvioUsuario(usuario);</span>
+        
+        const hoy = <span class="cstat-no" title="statement not covered" >new Date();</span>
+<span class="cstat-no" title="statement not covered" >        hoy.setHours(0,0,0,0);</span>
+        const hoyTimestamp:number = <span class="cstat-no" title="statement not covered" >hoy.getTime()/1000;</span>
+        const ayerTimestamp = <span class="cstat-no" title="statement not covered" >hoyTimestamp - 24 * 60 * 60;</span>
+&nbsp;
+        //excepcion si no se ha hecho un envio entre ayer y hoy 
+        //ya que la racha actual se actualiza cuando haga el siguiente envio
+<span class="cstat-no" title="statement not covered" >        if (ultimoEnvio !== hoyTimestamp &amp;&amp; ultimoEnvio !== ayerTimestamp)</span>
+<span class="cstat-no" title="statement not covered" >            return 0;</span>
+&nbsp;
 <span class="cstat-no" title="statement not covered" >        return usuarioDAO.getRachaActualDiasEnviosConsecutivos(usuario);</span>
     }
 &nbsp;
@@ -961,7 +958,7 @@ export default new UsuarioService();</pre></td></tr></table></pre>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-05-17T20:51:47.582Z
+                at 2026-05-17T21:22:07.817Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

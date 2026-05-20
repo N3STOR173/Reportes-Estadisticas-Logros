@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/83</span>
+                <span class='fraction'>0/85</span>
             </div>
         
             
@@ -39,14 +39,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/21</span>
+                <span class='fraction'>0/22</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/80</span>
+                <span class='fraction'>0/81</span>
             </div>
         
             
@@ -265,12 +265,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -282,6 +277,11 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -342,8 +342,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -441,7 +441,6 @@ import { socket } from "../services/socket.ts";
 import { EventType } from "shared";
 import { useQueryState } from "../hooks/useQueryState.tsx";
 import { NivelUsuario } from "shared";
-import "./TablaDeClasificaion.css";
 &nbsp;
 import BuscadorRanking from "../componentes/Ranking/BuscadorRanking.tsx";
 import FiltrosNivel from "../componentes/Ranking/FiltrosNivel.tsx";
@@ -455,6 +454,7 @@ export default function <span class="fstat-no" title="function not covered" >Tab
     const [users, setUsers] = <span class="cstat-no" title="statement not covered" >useState&lt;datoUsuario[]&gt;([]);</span>
     const [totalPags, setTotalPags] = <span class="cstat-no" title="statement not covered" >useState(1);</span>
     const [loading, setLoading] = <span class="cstat-no" title="statement not covered" >useState(false);</span>
+    const [tickSocket, setTickSocket] = <span class="cstat-no" title="statement not covered" >useState(0);</span>
 &nbsp;
     //usuario destacado en el ranking y si existe en el sistema
     const [usuarioQuery, setUsuarioQuery] = <span class="cstat-no" title="statement not covered" >useQueryState("usuarioActual", "");</span>
@@ -497,7 +497,7 @@ export default function <span class="fstat-no" title="function not covered" >Tab
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    useEffect(<span class="fstat-no" title="function not covered" >() =&gt; {</span></span>
 <span class="cstat-no" title="statement not covered" >        fetchRanking(pag, nivelFiltro);</span>
-    }, [pag, nivelFiltro]);
+    }, [pag, nivelFiltro, tickSocket]);
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    useEffect(<span class="fstat-no" title="function not covered" >() =&gt; {</span></span>
 <span class="cstat-no" title="statement not covered" >        if (!usuario) {</span>
@@ -528,8 +528,8 @@ export default function <span class="fstat-no" title="function not covered" >Tab
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    useEffect(<span class="fstat-no" title="function not covered" >() =&gt; {</span></span>
         const handler = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >() =&gt; {</span></span>
-<span class="cstat-no" title="statement not covered" >            fetchRanking(pag, nivelFiltro);</span>
-            //tambien se refresca el nivel del usuario seleccionado para que el aviso del boton "Ir a usuario" reaccione a subidas/bajadas de nivel propagadas por el socket
+            //incrementa el tick para que el effect principal relance fetchRanking con el pag actual
+<span class="cstat-no" title="statement not covered" >            setTickSocket(<span class="fstat-no" title="function not covered" >n =&gt; <span class="cstat-no" title="statement not covered" >n</span> + 1)</span>;</span>
 <span class="cstat-no" title="statement not covered" >            if (usuario) {</span>
 <span class="cstat-no" title="statement not covered" >                fetch(`/api/usuarios/${usuario}/nivel`)</span>
                     .then(<span class="fstat-no" title="function not covered" >r =&gt; <span class="cstat-no" title="statement not covered" >r</span>.json())</span>
@@ -539,7 +539,7 @@ export default function <span class="fstat-no" title="function not covered" >Tab
         };
 <span class="cstat-no" title="statement not covered" >        socket.on(EventType.ACTUALIZACION_RANKING, handler);</span>
 <span class="cstat-no" title="statement not covered" >        return <span class="fstat-no" title="function not covered" >() =&gt; {</span> <span class="cstat-no" title="statement not covered" >socket.off(EventType.ACTUALIZACION_RANKING, handler); }</span>;</span>
-    }, [pag, nivelFiltro, usuario]);
+    }, [usuario]);
 &nbsp;
     /**
      * Cambia el filtro de nivel y vuelve a la primera pagina en una sola actualizacion de URL.
@@ -628,7 +628,7 @@ export default function <span class="fstat-no" title="function not covered" >Tab
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-05-18T19:32:27.117Z
+                at 2026-05-20T16:21:03.815Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

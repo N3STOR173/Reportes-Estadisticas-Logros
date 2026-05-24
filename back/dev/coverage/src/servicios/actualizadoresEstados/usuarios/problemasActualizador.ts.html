@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/8</span>
+                <span class='fraction'>8/8</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/2</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/3</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/8</span>
+                <span class='fraction'>8/8</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -101,23 +101,23 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-yes">21x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">21x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">40x</span>
+<span class="cline-any cline-yes">32x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -131,23 +131,23 @@ import { EnvioProcesado } from "../../../types/envios/envioProcesado.js";
 &nbsp;
 class ProblemasActualizador extends ActualizadorUsuario {
 &nbsp;
-    id = <span class="cstat-no" title="statement not covered" >CampoUsuario.PROBLEMAS;</span>
-    version = <span class="cstat-no" title="statement not covered" >1;</span>
+    id = CampoUsuario.PROBLEMAS;
+    version = 1;
 &nbsp;
-<span class="fstat-no" title="function not covered" >    estadoVacio(e</span>stado: EstadoUsuario): void {
-<span class="cstat-no" title="statement not covered" >        estado.problemasAC = new Set();</span>
-<span class="cstat-no" title="statement not covered" >        estado.problemasNoAC = new Set();</span>
+    estadoVacio(estado: EstadoUsuario): void {
+        estado.problemasAC = new Set();
+        estado.problemasNoAC = new Set();
     }
 &nbsp;
-<span class="fstat-no" title="function not covered" >    async c</span>argarInicial(estado: EstadoUsuario, usuario: string): Promise&lt;void&gt; {
-<span class="cstat-no" title="statement not covered" >        estado.problemasAC = new Set(await usuarioService.getProblemasResueltos(usuario));</span>
+    async cargarInicial(estado: EstadoUsuario, usuario: string): Promise&lt;void&gt; {
+        estado.problemasAC = new Set(await usuarioService.getProblemasResueltos(usuario));
     }
 &nbsp;
-<span class="fstat-no" title="function not covered" >    actualizar(e</span>stado: EstadoUsuario, envio: EnvioProcesado): void {
-<span class="cstat-no" title="statement not covered" >        if (envio.resultado === "AC")</span>
-<span class="cstat-no" title="statement not covered" >            estado.problemasAC!.add(envio.problema);</span>
+    actualizar(estado: EstadoUsuario, envio: EnvioProcesado): void {
+        if (envio.resultado === "AC")
+            estado.problemasAC!.add(envio.problema);
         else
-<span class="cstat-no" title="statement not covered" >            estado.problemasNoAC!.add(envio.problema);</span>
+            estado.problemasNoAC!.add(envio.problema);
     }
 &nbsp;
 }
@@ -160,7 +160,7 @@ export default new ProblemasActualizador();
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-05-23T19:26:50.720Z
+                at 2026-05-24T00:40:07.494Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>

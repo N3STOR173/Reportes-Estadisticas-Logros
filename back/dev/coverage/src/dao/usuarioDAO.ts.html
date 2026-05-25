@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">64.1% </span>
+                <span class="strong">63.45% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>125/195</span>
+                <span class='fraction'>125/197</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">67.92% </span>
+                <span class="strong">65.45% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>36/53</span>
+                <span class='fraction'>36/55</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">63.44% </span>
+                <span class="strong">62.76% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>118/186</span>
+                <span class='fraction'>118/188</span>
             </div>
         
             
@@ -694,7 +694,23 @@
 <a name='L629'></a><a href='#L629'>629</a>
 <a name='L630'></a><a href='#L630'>630</a>
 <a name='L631'></a><a href='#L631'>631</a>
-<a name='L632'></a><a href='#L632'>632</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L632'></a><a href='#L632'>632</a>
+<a name='L633'></a><a href='#L633'>633</a>
+<a name='L634'></a><a href='#L634'>634</a>
+<a name='L635'></a><a href='#L635'>635</a>
+<a name='L636'></a><a href='#L636'>636</a>
+<a name='L637'></a><a href='#L637'>637</a>
+<a name='L638'></a><a href='#L638'>638</a>
+<a name='L639'></a><a href='#L639'>639</a>
+<a name='L640'></a><a href='#L640'>640</a>
+<a name='L641'></a><a href='#L641'>641</a>
+<a name='L642'></a><a href='#L642'>642</a>
+<a name='L643'></a><a href='#L643'>643</a>
+<a name='L644'></a><a href='#L644'>644</a>
+<a name='L645'></a><a href='#L645'>645</a>
+<a name='L646'></a><a href='#L646'>646</a>
+<a name='L647'></a><a href='#L647'>647</a>
+<a name='L648'></a><a href='#L648'>648</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -987,9 +1003,25 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1615,6 +1647,14 @@ class UsuarioDAO extends DAO {
     }
 &nbsp;
     /**
+     * Borra de Redis el ranking mensual del numero de envios de un mes concreto.
+     * @param mes - Mes (0-11) cuyo ranking se va a borrar.
+     */
+<span class="fstat-no" title="function not covered" >    public async b</span>orrarNumEnviosMesEspecifico(mes: number): Promise&lt;void&gt; {
+<span class="cstat-no" title="statement not covered" >        await this.redis.del(`usuario:numEnvios:mes:${mes}`);</span>
+    }
+&nbsp;
+    /**
      * Borra de Redis los rankings mensuales del numero de problemas resueltos con AC.
      */
 <span class="fstat-no" title="function not covered" >    public async b</span>orrarProblemasACMes(): Promise&lt;void&gt; {
@@ -1622,6 +1662,14 @@ class UsuarioDAO extends DAO {
 <span class="cstat-no" title="statement not covered" >        for (let mes = <span class="cstat-no" title="statement not covered" >0; m</span>es &lt; 12; mes++)</span>
 <span class="cstat-no" title="statement not covered" >            pipeline.del(`usuario:problemasAC:mes:${mes}`);</span>
 <span class="cstat-no" title="statement not covered" >        await pipeline.exec();</span>
+    }
+&nbsp;
+    /**
+     * Borra de Redis el ranking mensual de problemas resueltos con AC de un mes concreto.
+     * @param mes - Mes (0-11) cuyo ranking se va a borrar.
+     */
+<span class="fstat-no" title="function not covered" >    public async b</span>orrarProblemasACMesEspecifico(mes: number): Promise&lt;void&gt; {
+<span class="cstat-no" title="statement not covered" >        await this.redis.del(`usuario:problemasAC:mes:${mes}`);</span>
     }
 &nbsp;
     ////============================== MODIFICADORES ==============================
@@ -1963,7 +2011,7 @@ export default new UsuarioDAO();</pre></td></tr></table></pre>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-05-24T21:08:52.330Z
+                at 2026-05-25T01:06:54.597Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

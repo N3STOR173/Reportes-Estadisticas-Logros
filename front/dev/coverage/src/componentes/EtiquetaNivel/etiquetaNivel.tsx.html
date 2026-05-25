@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">81.81% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/11</span>
+                <span class='fraction'>9/11</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/4</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">60% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/5</span>
+                <span class='fraction'>3/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/8</span>
+                <span class='fraction'>8/8</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -110,19 +110,19 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -137,26 +137,26 @@ import { NivelUsuario } from "shared"
 import { colorDelNivel, colorTextoDelNivel } from "./colorDelNivel.ts";
 import "./etiquetaNivel.css";
 &nbsp;
-export default function <span class="fstat-no" title="function not covered" >EtiquetaNivel(p</span>rops: {
+export default function EtiquetaNivel(props: {
     evento: string,
     nivel: NivelUsuario,
     loading?: boolean,
     className?: string,
 }) {
     //el nivel base viene de las props, si llega una actualizacion por socket prevalece hasta nuevo cambio de props
-    const [socketNivel, setSocketNivel] = <span class="cstat-no" title="statement not covered" >useState&lt;NivelUsuario | null&gt;(null);</span>
+    const [socketNivel, setSocketNivel] = useState&lt;NivelUsuario | null&gt;(null);
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    useEffect(<span class="fstat-no" title="function not covered" >() =&gt; {</span></span>
-        const handler = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(n</span>ewNivel: NivelUsuario) =&gt; <span class="cstat-no" title="statement not covered" >setSocketNivel(newNivel);</span></span>
-<span class="cstat-no" title="statement not covered" >        socket.on(props.evento, handler);</span>
-<span class="cstat-no" title="statement not covered" >        return <span class="fstat-no" title="function not covered" >() =&gt; {</span> <span class="cstat-no" title="statement not covered" >socket.off(props.evento, handler); }</span>;</span>
+    useEffect(() =&gt; {
+        const handler = <span class="fstat-no" title="function not covered" >(n</span>ewNivel: NivelUsuario) =&gt; <span class="cstat-no" title="statement not covered" >setSocketNivel(newNivel);</span>
+        socket.on(props.evento, handler);
+        return <span class="fstat-no" title="function not covered" >() =&gt; {</span> <span class="cstat-no" title="statement not covered" >socket.off(props.evento, handler); }</span>;
     }, [props.evento]);
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    useEffect(<span class="fstat-no" title="function not covered" >() =&gt; {</span> <span class="cstat-no" title="statement not covered" >setSocketNivel(null); }</span>, [props.nivel]);</span>
+    useEffect(() =&gt; { setSocketNivel(null); }, [props.nivel]);
 &nbsp;
-    const nivel = <span class="cstat-no" title="statement not covered" >socketNivel ?? props.nivel;</span>
+    const nivel = socketNivel ?? props.nivel;
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    return (</span>
+    return (
         &lt;span
             className={`etiqueta-nivel ms-2 ${props.className ?? ""}`}
             style={{ backgroundColor: colorDelNivel(nivel), color: colorTextoDelNivel(nivel) }}
@@ -172,7 +172,7 @@ export default function <span class="fstat-no" title="function not covered" >Eti
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-05-25T01:07:23.859Z
+                at 2026-05-25T16:53:15.614Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

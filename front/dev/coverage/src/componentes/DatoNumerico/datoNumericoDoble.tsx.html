@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">81.81% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/22</span>
+                <span class='fraction'>18/22</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">83.33% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/6</span>
+                <span class='fraction'>5/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">62.5% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/8</span>
+                <span class='fraction'>5/8</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">88.23% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/17</span>
+                <span class='fraction'>15/17</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -157,32 +157,32 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -217,7 +217,7 @@ type Dato = {
  * abajo, cada uno con su propia etiqueta corta. Cada valor se actualiza por su propio
  * evento de socket.
  */
-export default function <span class="fstat-no" title="function not covered" >DatoNumericoDoble(p</span>rops: {
+export default function DatoNumericoDoble(props: {
     dimensiones: { width: number; height: number },
     titulo: string,
     izquierda: Dato,
@@ -226,32 +226,32 @@ export default function <span class="fstat-no" title="function not covered" >Dat
     loading?: boolean,
 }) {
 &nbsp;
-    const normalizar = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(v</span>al: number) =&gt; <span class="cstat-no" title="statement not covered" >val % 1 !== 0 ? parseFloat(val.toFixed(3)) : val;</span></span>
+    const normalizar = (val: number) =&gt; val % 1 !== 0 ? <span class="branch-0 cbranch-no" title="branch not covered" >parseFloat(val.toFixed(3)) : v</span>al;
 &nbsp;
     //los datos base vienen de las props, si llegan actualizaciones por socket prevalecen hasta nuevo cambio de props
-    const [socketIzq, setSocketIzq] = <span class="cstat-no" title="statement not covered" >useState&lt;number | null&gt;(null);</span>
-    const [socketDer, setSocketDer] = <span class="cstat-no" title="statement not covered" >useState&lt;number | null&gt;(null);</span>
+    const [socketIzq, setSocketIzq] = useState&lt;number | null&gt;(null);
+    const [socketDer, setSocketDer] = useState&lt;number | null&gt;(null);
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    useEffect(<span class="fstat-no" title="function not covered" >() =&gt; {</span></span>
-        const handlerIzq = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(n</span>uevo: number) =&gt; <span class="cstat-no" title="statement not covered" >setSocketIzq(nuevo);</span></span>
-        const handlerDer = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(n</span>uevo: number) =&gt; <span class="cstat-no" title="statement not covered" >setSocketDer(nuevo);</span></span>
-<span class="cstat-no" title="statement not covered" >        socket.on(props.izquierda.evento, handlerIzq);</span>
-<span class="cstat-no" title="statement not covered" >        socket.on(props.derecha.evento, handlerDer);</span>
-<span class="cstat-no" title="statement not covered" >        return <span class="fstat-no" title="function not covered" >() =&gt; {</span></span>
+    useEffect(() =&gt; {
+        const handlerIzq = <span class="fstat-no" title="function not covered" >(n</span>uevo: number) =&gt; <span class="cstat-no" title="statement not covered" >setSocketIzq(nuevo);</span>
+        const handlerDer = <span class="fstat-no" title="function not covered" >(n</span>uevo: number) =&gt; <span class="cstat-no" title="statement not covered" >setSocketDer(nuevo);</span>
+        socket.on(props.izquierda.evento, handlerIzq);
+        socket.on(props.derecha.evento, handlerDer);
+        return <span class="fstat-no" title="function not covered" >() =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >            socket.off(props.izquierda.evento, handlerIzq);</span>
 <span class="cstat-no" title="statement not covered" >            socket.off(props.derecha.evento, handlerDer);</span>
         };
     }, [props.izquierda.evento, props.derecha.evento]);
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    useEffect(<span class="fstat-no" title="function not covered" >() =&gt; {</span> <span class="cstat-no" title="statement not covered" >setSocketIzq(null); }</span>, [props.izquierda.value]);</span>
-<span class="cstat-no" title="statement not covered" >    useEffect(<span class="fstat-no" title="function not covered" >() =&gt; {</span> <span class="cstat-no" title="statement not covered" >setSocketDer(null); }</span>, [props.derecha.value]);</span>
+    useEffect(() =&gt; { setSocketIzq(null); }, [props.izquierda.value]);
+    useEffect(() =&gt; { setSocketDer(null); }, [props.derecha.value]);
 &nbsp;
-    const izq = <span class="cstat-no" title="statement not covered" >normalizar(socketIzq ?? props.izquierda.value);</span>
-    const der = <span class="cstat-no" title="statement not covered" >normalizar(socketDer ?? props.derecha.value);</span>
+    const izq = normalizar(socketIzq ?? props.izquierda.value);
+    const der = normalizar(socketDer ?? props.derecha.value);
 &nbsp;
-    const alturaStyle = <span class="cstat-no" title="statement not covered" >{ height: `${props.dimensiones.height}px` };</span>
+    const alturaStyle = { height: `${props.dimensiones.height}px` };
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    return (</span>
+    return (
         &lt;div style={props.style} className="w-full"&gt;
             &lt;Skeleton loading={props.loading} className="dato-numerico-container" style={alturaStyle}&gt;
                 &lt;p className="dato-numerico-titulo"&gt;{props.titulo}&lt;/p&gt;
@@ -277,7 +277,7 @@ export default function <span class="fstat-no" title="function not covered" >Dat
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-05-25T01:07:23.859Z
+                at 2026-05-25T16:53:15.614Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

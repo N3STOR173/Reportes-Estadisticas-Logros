@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">68.75% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/16</span>
+                <span class='fraction'>11/16</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/6</span>
+                <span class='fraction'>3/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">42.85% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/7</span>
+                <span class='fraction'>3/7</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">71.42% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/14</span>
+                <span class='fraction'>10/14</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -138,29 +138,29 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -185,7 +185,7 @@ import { Link } from "react-router-dom";
  * el caracter '#' al valor y refresca el dato consultando la API al recibir el
  * evento de actualizacion del ranking por socket.
  */
-export default function <span class="fstat-no" title="function not covered" >DatoNumericoRanking(p</span>rops: {
+export default function DatoNumericoRanking(props: {
     usuario: string,
     dimensiones: { width: number; height: number },
     dato: { value: number; description: string }
@@ -193,10 +193,10 @@ export default function <span class="fstat-no" title="function not covered" >Dat
     loading?: boolean;
 }) {
     //el dato base viene de las props, si llega una actualizacion por socket se refetchea y prevalece sobre las props
-    const [socketData, setSocketData] = <span class="cstat-no" title="statement not covered" >useState&lt;number | null&gt;(null);</span>
+    const [socketData, setSocketData] = useState&lt;number | null&gt;(null);
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    useEffect(<span class="fstat-no" title="function not covered" >() =&gt; {</span></span>
-        const handler = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >() =&gt; {</span></span>
+    useEffect(() =&gt; {
+        const handler = <span class="fstat-no" title="function not covered" >() =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >            fetch(`/api/usuarios/${props.usuario}/posRanking`)</span>
                 .then(<span class="fstat-no" title="function not covered" >res =&gt; <span class="cstat-no" title="statement not covered" >r</span>es.json())</span>
                 .then(<span class="fstat-no" title="function not covered" >data =&gt; {</span>
@@ -204,18 +204,18 @@ export default function <span class="fstat-no" title="function not covered" >Dat
 <span class="cstat-no" title="statement not covered" >                        setSocketData(data);</span>
                 });
         };
-<span class="cstat-no" title="statement not covered" >        socket.on(EventType.ACTUALIZACION_RANKING, handler);</span>
-<span class="cstat-no" title="statement not covered" >        return <span class="fstat-no" title="function not covered" >() =&gt; {</span> <span class="cstat-no" title="statement not covered" >socket.off(EventType.ACTUALIZACION_RANKING, handler); }</span>;</span>
+        socket.on(EventType.ACTUALIZACION_RANKING, handler);
+        return <span class="fstat-no" title="function not covered" >() =&gt; {</span> <span class="cstat-no" title="statement not covered" >socket.off(EventType.ACTUALIZACION_RANKING, handler); }</span>;
     }, [props.usuario]);
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    useEffect(<span class="fstat-no" title="function not covered" >() =&gt; {</span> <span class="cstat-no" title="statement not covered" >setSocketData(null); }</span>, [props.dato.value]);</span>
+    useEffect(() =&gt; { setSocketData(null); }, [props.dato.value]);
 &nbsp;
-    const valor = <span class="cstat-no" title="statement not covered" >socketData ?? props.dato.value;</span>
-    const data = <span class="cstat-no" title="statement not covered" >valor % 1 !== 0 ? parseFloat(valor.toFixed(3)) : valor;</span>
+    const valor = socketData ?? props.dato.value;
+    const data = valor % 1 !== 0 ? <span class="branch-0 cbranch-no" title="branch not covered" >parseFloat(valor.toFixed(3)) : v</span>alor;
 &nbsp;
-    const alturaStyle = <span class="cstat-no" title="statement not covered" >{ height: `${props.dimensiones.height}px` };</span>
+    const alturaStyle = { height: `${props.dimensiones.height}px` };
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    return (</span>
+    return (
         &lt;div style={props.style} className="w-full"&gt;
             &lt;Skeleton loading={props.loading} className="dato-numerico-container" style={alturaStyle}&gt;
                 &lt;p className="dato-numerico-titulo"&gt;{props.dato.description}&lt;/p&gt;
@@ -235,7 +235,7 @@ export default function <span class="fstat-no" title="function not covered" >Dat
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-05-25T01:07:23.859Z
+                at 2026-05-25T16:53:15.614Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

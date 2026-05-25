@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">37.5% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/16</span>
+                <span class='fraction'>6/16</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">16.66% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/12</span>
+                <span class='fraction'>2/12</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/2</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">37.5% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/16</span>
+                <span class='fraction'>6/16</span>
             </div>
         
             
@@ -107,14 +107,14 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -125,14 +125,14 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { NivelUsuario } from "shared";
@@ -143,14 +143,14 @@
  * @param n - Nombre del nivel.
  * @returns Color hexadecimal del nivel.
  */
-export const colorDelNivel = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(n</span>: string): string =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    switch (n) {</span>
-        case NivelUsuario.APRENDIZ:     <span class="cstat-no" title="statement not covered" >return "#266e9b";</span>
-        case NivelUsuario.COMPETENTE:   <span class="cstat-no" title="statement not covered" >return "#3989a8";</span>
-        case NivelUsuario.HABIL:        <span class="cstat-no" title="statement not covered" >return "#4ca3b6";</span>
-        case NivelUsuario.ESPECIALISTA: <span class="cstat-no" title="statement not covered" >return "#86c6e0";</span>
-        case NivelUsuario.PROFESIONAL:  <span class="cstat-no" title="statement not covered" >return "#a4d3fc";</span>
-        default:                        <span class="cstat-no" title="statement not covered" >return "#7a8a99";</span>
+export const colorDelNivel = (n: string): string =&gt; {
+    switch (n) {
+<span class="branch-0 cbranch-no" title="branch not covered" >        case NivelUsuario.APRENDIZ:     <span class="cstat-no" title="statement not covered" >return "#266e9b";</span></span>
+<span class="branch-1 cbranch-no" title="branch not covered" >        case NivelUsuario.COMPETENTE:   <span class="cstat-no" title="statement not covered" >return "#3989a8";</span></span>
+<span class="branch-2 cbranch-no" title="branch not covered" >        case NivelUsuario.HABIL:        <span class="cstat-no" title="statement not covered" >return "#4ca3b6";</span></span>
+<span class="branch-3 cbranch-no" title="branch not covered" >        case NivelUsuario.ESPECIALISTA: <span class="cstat-no" title="statement not covered" >return "#86c6e0";</span></span>
+<span class="branch-4 cbranch-no" title="branch not covered" >        case NivelUsuario.PROFESIONAL:  <span class="cstat-no" title="statement not covered" >return "#a4d3fc";</span></span>
+        default:                        return "#7a8a99";
     }
 };
 &nbsp;
@@ -161,14 +161,14 @@ export const colorDelNivel = <span class="cstat-no" title="statement not covered
  * @param n - Nombre del nivel.
  * @returns Color hexadecimal del texto.
  */
-export const colorTextoDelNivel = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(n</span>: string): string =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    switch (n) {</span>
-        case NivelUsuario.APRENDIZ:     <span class="cstat-no" title="statement not covered" >return "#fefefe";</span>
-        case NivelUsuario.COMPETENTE:   <span class="cstat-no" title="statement not covered" >return "#f9f9f9";</span>
-        case NivelUsuario.HABIL:        <span class="cstat-no" title="statement not covered" >return "#ffffff";</span>
-        case NivelUsuario.ESPECIALISTA: <span class="cstat-no" title="statement not covered" >return "#064772";</span>
-        case NivelUsuario.PROFESIONAL:      <span class="cstat-no" title="statement not covered" >return "#064772";</span>
-        default:                        <span class="cstat-no" title="statement not covered" >return "#fff";</span>
+export const colorTextoDelNivel = (n: string): string =&gt; {
+    switch (n) {
+<span class="branch-0 cbranch-no" title="branch not covered" >        case NivelUsuario.APRENDIZ:     <span class="cstat-no" title="statement not covered" >return "#fefefe";</span></span>
+<span class="branch-1 cbranch-no" title="branch not covered" >        case NivelUsuario.COMPETENTE:   <span class="cstat-no" title="statement not covered" >return "#f9f9f9";</span></span>
+<span class="branch-2 cbranch-no" title="branch not covered" >        case NivelUsuario.HABIL:        <span class="cstat-no" title="statement not covered" >return "#ffffff";</span></span>
+<span class="branch-3 cbranch-no" title="branch not covered" >        case NivelUsuario.ESPECIALISTA: <span class="cstat-no" title="statement not covered" >return "#064772";</span></span>
+<span class="branch-4 cbranch-no" title="branch not covered" >        case NivelUsuario.PROFESIONAL:      <span class="cstat-no" title="statement not covered" >return "#064772";</span></span>
+        default:                        return "#fff";
     }
 };
 &nbsp;</pre></td></tr></table></pre>
@@ -178,7 +178,7 @@ export const colorTextoDelNivel = <span class="cstat-no" title="statement not co
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-05-25T15:46:23.214Z
+                at 2026-05-25T16:53:00.069Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

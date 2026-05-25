@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">55.55% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/18</span>
+                <span class='fraction'>10/18</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">33.33% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/6</span>
+                <span class='fraction'>2/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">42.85% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/7</span>
+                <span class='fraction'>3/7</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">69.23% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/13</span>
+                <span class='fraction'>9/13</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -167,31 +167,31 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -263,31 +263,31 @@ import {
 import { socket } from "../../services/socket.ts";
 import Skeleton from "../Skeleton/skeleton.tsx";
 &nbsp;
-const formatearXP = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(x</span>p: number): string =&gt; {</span>
+const formatearXP = <span class="fstat-no" title="function not covered" >(x</span>p: number): string =&gt; {
 <span class="cstat-no" title="statement not covered" >    if (xp &gt;= 1_000_000) <span class="cstat-no" title="statement not covered" >return `${+(xp / 1_000_000).toFixed(1)}M`;</span></span>
 <span class="cstat-no" title="statement not covered" >    if (xp &gt;= 1_000) <span class="cstat-no" title="statement not covered" >return `${+(xp / 1_000).toFixed(1)}k`;</span></span>
 <span class="cstat-no" title="statement not covered" >    return String(xp);</span>
 };
 &nbsp;
-export default function <span class="fstat-no" title="function not covered" >ProgresoXP(p</span>rops: {
+export default function ProgresoXP(props: {
     evento: string,
     datos: { mes: string, puntos: number }[],
     loading?: boolean,
 }) {
     //el dato base viene de las props, si llega una actualizacion por socket prevalece hasta nuevo cambio de props
-    const [socketData, setSocketData] = <span class="cstat-no" title="statement not covered" >useState&lt;{ mes: string, puntos: number }[] | null&gt;(null);</span>
+    const [socketData, setSocketData] = useState&lt;{ mes: string, puntos: number }[] | null&gt;(null);
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    useEffect(<span class="fstat-no" title="function not covered" >() =&gt; {</span></span>
-        const handler = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(n</span>uevoDatos: { mes: string, puntos: number }[]) =&gt; <span class="cstat-no" title="statement not covered" >setSocketData(nuevoDatos);</span></span>
-<span class="cstat-no" title="statement not covered" >        socket.on(props.evento, handler);</span>
-<span class="cstat-no" title="statement not covered" >        return <span class="fstat-no" title="function not covered" >() =&gt; {</span> <span class="cstat-no" title="statement not covered" >socket.off(props.evento, handler); }</span>;</span>
+    useEffect(() =&gt; {
+        const handler = <span class="fstat-no" title="function not covered" >(n</span>uevoDatos: { mes: string, puntos: number }[]) =&gt; <span class="cstat-no" title="statement not covered" >setSocketData(nuevoDatos);</span>
+        socket.on(props.evento, handler);
+        return <span class="fstat-no" title="function not covered" >() =&gt; {</span> <span class="cstat-no" title="statement not covered" >socket.off(props.evento, handler); }</span>;
     }, [props.evento]);
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    useEffect(<span class="fstat-no" title="function not covered" >() =&gt; {</span> <span class="cstat-no" title="statement not covered" >setSocketData(null); }</span>, [props.datos]);</span>
+    useEffect(() =&gt; { setSocketData(null); }, [props.datos]);
 &nbsp;
-    const data = <span class="cstat-no" title="statement not covered" >socketData ?? props.datos;</span>
+    const data = socketData ?? props.datos;
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    return (</span>
+    return (
         &lt;Skeleton loading={props.loading} style={{
             width: "100%",
             height: "100%",
@@ -358,7 +358,7 @@ export default function <span class="fstat-no" title="function not covered" >Pro
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-05-25T15:46:23.214Z
+                at 2026-05-25T16:53:00.069Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">85% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/20</span>
+                <span class='fraction'>17/20</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">72.72% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/22</span>
+                <span class='fraction'>16/22</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">88.88% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/9</span>
+                <span class='fraction'>8/9</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">89.47% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/19</span>
+                <span class='fraction'>17/19</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -151,36 +151,36 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -223,42 +223,42 @@ import EtiquetaNivel from "../componentes/EtiquetaNivel/etiquetaNivel";
 import { EventType, formatEvent } from "shared";
 import { NivelUsuario } from "shared";
 &nbsp;
-export default function <span class="fstat-no" title="function not covered" >EstadisticasUsuario() {</span>
+export default function EstadisticasUsuario() {
 &nbsp;
     //usuario confirmado tras pulsar buscar, solo cambia en commits (URL inicial, localStorage o onResultado), no en cada tecla
-    const [usuario, setUsuario] = <span class="cstat-no" title="statement not covered" >useState&lt;string&gt;(<span class="fstat-no" title="function not covered" >() =&gt;</span></span>
-<span class="cstat-no" title="statement not covered" >        new URLSearchParams(window.location.search).get("usuario") || localStorage.getItem("usuario") || ""</span>
+    const [usuario, setUsuario] = useState&lt;string&gt;(() =&gt;
+        new URLSearchParams(window.location.search).get("usuario") || localStorage.getItem("usuario") || <span class="branch-2 cbranch-no" title="branch not covered" >""</span>
     );
 &nbsp;
-    const [usuarioExiste, setUsuarioExiste] = <span class="cstat-no" title="statement not covered" >useState&lt;boolean | null&gt;(null);</span>
-<span class="cstat-no" title="statement not covered" >    useEffect(<span class="fstat-no" title="function not covered" >() =&gt; {</span></span>
-<span class="cstat-no" title="statement not covered" >        if (!usuario) <span class="cstat-no" title="statement not covered" >return;</span></span>
-<span class="cstat-no" title="statement not covered" >        setUsuarioExiste(null);</span>
-<span class="cstat-no" title="statement not covered" >        fetch(`/api/usuarios/${encodeURIComponent(usuario)}`)</span>
-            .then(<span class="fstat-no" title="function not covered" >res =&gt; <span class="cstat-no" title="statement not covered" >r</span>es.json())</span>
-            .then(<span class="fstat-no" title="function not covered" >data =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >                setUsuarioExiste(data.existe);</span>
-<span class="cstat-no" title="statement not covered" >                if (data.existe &amp;&amp; usuario !== localStorage.getItem("usuario")) {</span>
+    const [usuarioExiste, setUsuarioExiste] = useState&lt;boolean | null&gt;(null);
+    useEffect(() =&gt; {
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (!usuario) <span class="cstat-no" title="statement not covered" >return;</span>
+        setUsuarioExiste(null);
+        fetch(`/api/usuarios/${encodeURIComponent(usuario)}`)
+            .then(res =&gt; res.json())
+            .then(data =&gt; {
+                setUsuarioExiste(data.existe);
+                <span class="missing-if-branch" title="if path not taken" >I</span>if (data.existe &amp;&amp; usuario !== localStorage.getItem("usuario")) {
 <span class="cstat-no" title="statement not covered" >                    localStorage.setItem("usuario", usuario);</span>
                 }
             });
     }, [usuario]);
 &nbsp;
     // NIVEL
-    const [nivel, setNivel] = <span class="cstat-no" title="statement not covered" >useState&lt;NivelUsuario&gt;(NivelUsuario.SIN_NIVEL);</span>
-<span class="cstat-no" title="statement not covered" >    useEffect(<span class="fstat-no" title="function not covered" >() =&gt; {</span></span>
-<span class="cstat-no" title="statement not covered" >        if (usuarioExiste) {</span>
-<span class="cstat-no" title="statement not covered" >            fetch(`/api/usuarios/${usuario}/nivel`)</span>
-                .then(<span class="fstat-no" title="function not covered" >response =&gt; <span class="cstat-no" title="statement not covered" >r</span>esponse.json())</span>
-                .then(<span class="fstat-no" title="function not covered" >data =&gt; <span class="cstat-no" title="statement not covered" >s</span>etNivel(data))</span>;
+    const [nivel, setNivel] = useState&lt;NivelUsuario&gt;(NivelUsuario.SIN_NIVEL);
+    useEffect(() =&gt; {
+        if (usuarioExiste) {
+            fetch(`/api/usuarios/${usuario}/nivel`)
+                .then(response =&gt; response.json())
+                .then(data =&gt; setNivel(data));
         }
 &nbsp;
     }, [usuario, usuarioExiste]);
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    return (</span>
+    return (
         &lt;PlantillaBusqueda
             hasResult={usuarioExiste === true}
-            mensajeDeNoEncontrado={usuarioExiste === false &amp;&amp; usuario !== "" ? `El usuario "${usuario}" no existe` : ""}
+            mensajeDeNoEncontrado={usuarioExiste === false &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >usuario !== "" ? <span class="branch-0 cbranch-no" title="branch not covered" >`</span>El usuario "${usuario}" no existe` : "</span>"}
             tituloBusqueda="Estadísticas de usuarios"
             descripcion="Aquí podrás buscar cualquier usuario de ¡Acepta el reto! y observar sus estadísticas"
             buscador={
@@ -281,7 +281,7 @@ export default function <span class="fstat-no" title="function not covered" >Est
                             }
 &nbsp;
                         &lt;/&gt;
-                        : undefined
+                        : <span class="branch-1 cbranch-no" title="branch not covered" >undefined</span>
                     }
                 /&gt;
             }
@@ -295,7 +295,7 @@ export default function <span class="fstat-no" title="function not covered" >Est
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-05-25T15:46:23.214Z
+                at 2026-05-25T16:53:00.069Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

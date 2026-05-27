@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">49.6% </span>
+                <span class="strong">50.39% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>62/125</span>
+                <span class='fraction'>64/127</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">36% </span>
+                <span class="strong">34% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>18/50</span>
+                <span class='fraction'>17/50</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">48% </span>
+                <span class="strong">45.83% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>12/25</span>
+                <span class='fraction'>11/24</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">51.32% </span>
+                <span class="strong">52.58% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>58/113</span>
+                <span class='fraction'>61/116</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -430,7 +430,11 @@
 <a name='L365'></a><a href='#L365'>365</a>
 <a name='L366'></a><a href='#L366'>366</a>
 <a name='L367'></a><a href='#L367'>367</a>
-<a name='L368'></a><a href='#L368'>368</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L368'></a><a href='#L368'>368</a>
+<a name='L369'></a><a href='#L369'>369</a>
+<a name='L370'></a><a href='#L370'>370</a>
+<a name='L371'></a><a href='#L371'>371</a>
+<a name='L372'></a><a href='#L372'>372</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -493,6 +497,7 @@
 <span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -504,10 +509,13 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">18x</span>
+<span class="cline-any cline-yes">45x</span>
 <span class="cline-any cline-yes">45x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">45x</span>
 <span class="cline-any cline-yes">60x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">45x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">45x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -857,26 +865,30 @@ class XPService {
         await xpDAO.registrarBloqueXP(this.calcularXP(estadisticasActivas, estadosIniciales, estadosFinales, nuevosLogros));
 &nbsp;
         //se recorre cada mes para calcular su xp y persistir las estadisticas del mes
-        const meses = [...estadosFinalesPorMes.keys()].sort((a, b) =&gt; a - b);
+        const meses = [...estadosFinalesPorMes.keys()];
         const pipeline = usuarioDAO.iniciarPipeline();
+        const estadosPrevios = new Map&lt;string, EstadoUsuario&gt;(estadosIniciales);
         const bloquesMes: { mes: number, puntos: datosXP[] }[] = [];
 &nbsp;
         for (const mes of meses) {
-            //los estados ya contienen solo el delta del mes, no el acumulado
-            const deltasMes = estadosFinalesPorMes.get(mes)!;
+            //estadosFinalesMes es el snapshot acumulado al final del mes
+            const estadosFinalesMes = estadosFinalesPorMes.get(mes)!;
             const nuevosLogrosMes = nuevosLogrosPorMes.get(mes) ?? <span class="branch-1 cbranch-no" title="branch not covered" >new Map&lt;string, Set&lt;Logro&gt;&gt;();</span>
 &nbsp;
-            //la xp del mes se calcula directamente del delta
-            bloquesMes.push({ mes, puntos: this.calcularXP(estadisticasActivas, new Map(), deltasMes, nuevosLogrosMes) });
+            //la xp del mes se calcula como la diferencia entre el snapshot del mes y el del mes anterior
+            bloquesMes.push({ mes, puntos: this.calcularXP(estadisticasActivas, estadosPrevios, estadosFinalesMes, nuevosLogrosMes) });
 &nbsp;
-            //se persisten las estadisticas del mes usando el delta
-            for (const [usuario, deltaMes] of deltasMes) {
+            //se persisten las estadisticas del mes encadenando el snapshot del mes anterior como referencia
+            for (const [usuario, estadoFinalMes] of estadosFinalesMes) {
+                const anterior = estadosPrevios.get(usuario)!;
                 const logrosMes = nuevosLogrosMes.get(usuario) ?? new Set&lt;Logro&gt;();
 &nbsp;
                 for (const estadistica of estadisticasActivas)
-                    estadistica.registrarMes(pipeline, usuario, mes, {}, deltaMes, logrosMes);
+                    estadistica.registrarMes(pipeline, usuario, mes, anterior, estadoFinalMes, logrosMes);
 &nbsp;
                 logrosService.registrarMes(pipeline, usuario, mes, logrosMes);
+&nbsp;
+                estadosPrevios.set(usuario, estadoFinalMes);
             }
         }
 &nbsp;
@@ -901,7 +913,7 @@ class XPService {
         const resultado: datosXP[] = [];
         for (const [usuario, estadoFinal] of estadosFinales) {
             
-            const estadoInicial = estadosIniciales.get(usuario) ?? {} as EstadoUsuario;
+            const estadoInicial = estadosIniciales.get(usuario) ?? <span class="branch-1 cbranch-no" title="branch not covered" >{} </span>as EstadoUsuario;
             
             const logros = nuevosLogros.get(usuario) ?? new Set&lt;Logro&gt;();
             
@@ -1171,7 +1183,7 @@ export default new XPService();</pre></td></tr></table></pre>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-05-25T21:51:56.209Z
+                at 2026-05-27T16:49:23.471Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
